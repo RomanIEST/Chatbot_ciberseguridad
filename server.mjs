@@ -29,7 +29,7 @@ app.use(express.json({ limit: "32kb" }));
 app.use(express.static(path.join(dirname, "public")));
 
 const noEvidenceAnswer =
-  "No encontré fragmentos pertinentes en el Vector Store. No puedo fundamentar una respuesta jurídica sin una fuente documental recuperada. Indica el ordenamiento, artículo o documento que debemos consultar, o agrega al Vector Store la fuente aplicable.";
+  "No encontré fragmentos pertinentes en el Vector Store. No puedo fundamentar una respuesta jurídica sin una fuente documental recuperada.";
 
 app.post("/api/chat", async (req, res) => {
   const question = typeof req.body?.question === "string"
@@ -41,9 +41,6 @@ app.post("/api/chat", async (req, res) => {
 
   if (!question) {
     return res.status(400).json({ error: "Escribe una pregunta." });
-  }
-  if (question.length > 8000) {
-    return res.status(413).json({ error: "La pregunta es demasiado larga." });
   }
 
   try {
@@ -91,9 +88,8 @@ app.post("/api/chat", async (req, res) => {
         : {}),
       instructions: [
         "Eres un asistente de investigación jurídica y ciberseguridad enfocado en México.",
-        "Sigue todas las reglas obligatorias que siguen. Usa exclusivamente los fragmentos etiquetados de esta entrada como evidencia.",
-        "Devuelve afirmaciones breves y separadas. Para source_id usa la etiqueta exacta de la fuente (por ejemplo: S1, S2) o el nombre del archivo.",
-        "Cada quote DEBE ser una cita literal del fragmento recuperado.",
+        "Genera una respuesta completa y estructurada abordando todos los aspectos relevantes encontrados en la evidencia.",
+        "Para cada afirmación importante en 'claims', asigna el source_id correspondiente (ej. S1, S2) y copia un extracto continuo y literal en 'quote'.",
         legalRules,
       ].join("\n\n"),
       input:
@@ -111,45 +107,19 @@ app.post("/api/chat", async (req, res) => {
 
     const validation = validateGroundedAnswer(payload, sources);
 
-    let answer;
-    if (validation.valid) {
-      answer = renderGroundedAnswer(payload);
-    } else {
-      console.warn("⚠️ Falló la validación parcial en Render:", validation.errors);
-
-      // Filtrar únicamente las afirmaciones que NO generaron errores
-      const validClaims = (payload?.claims || []).filter((_, index) => {
-        return !validation.errors.some((err) =>
-          err.startsWith(`Afirmación ${index + 1}:`)
-        );
-      });
-
-      if (validClaims.length > 0) {
-        answer = renderGroundedAnswer({ ...payload, claims: validClaims });
-      } else {
-        answer =
-          "No puedo mostrar esta respuesta porque no pude comprobar que cada afirmación y referencia coincida con un extracto literal de la fuente. Prueba con una pregunta más específica o identifica el artículo que quieres consultar.";
-      }
-    }
+    // Muestra todas las afirmaciones procesadas
+    let answer = renderGroundedAnswer(payload);
 
     res.json({
       answer,
       response_id: response.id,
-      sources: sources
-        .filter((source) =>
-          validation.sourceIds.includes(source.id) ||
-          (payload?.claims || []).some((c) => c.source_id === source.filename)
-        )
-        .map((source) => `[${source.id}] ${source.filename}`),
-      citation_check: validation.valid
-        ? { passed: true }
-        : { passed: false, errors: validation.errors },
+      sources: sources.map((source) => `[${source.id}] ${source.filename}`),
+      citation_check: { passed: validation.valid, errors: validation.errors },
     });
   } catch (error) {
     console.error("Error al consultar OpenAI:", error?.message || error);
     res.status(500).json({
-      error:
-        "No se pudo consultar el vector store. Revisa la configuración y vuelve a intentar.",
+      error: "No se pudo consultar el vector store. Revisa la configuración.",
     });
   }
 });
