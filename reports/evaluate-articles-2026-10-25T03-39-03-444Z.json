@@ -1,0 +1,967 @@
+{
+  "runAt": "2026-10-25T03:39:03.444Z",
+  "model": "gpt-4o-mini",
+  "suite": "article-reference-quality",
+  "totalCases": 8,
+  "metrics": {
+    "retrieval": 8,
+    "quoteIntegrity": 0,
+    "articleAccuracy": 7,
+    "articleScope": 6,
+    "contentHeuristics": 4,
+    "responseStatus": 8,
+    "overall": 0
+  },
+  "metricDenominator": 8,
+  "interpretation": "Structured answers are checked against literal source excerpts and article headings. Automated checks are still heuristics and do not prove that a legal interpretation is correct; manually inspect each answer and quote.",
+  "results": [
+    {
+      "id": "LFPDPPP-SEC-18",
+      "file": "LFPDPPP.pdf",
+      "question": "Conforme exclusivamente a la LFPDPPP del Vector Store, ¿qué artículo obliga al responsable a establecer medidas administrativas, técnicas y físicas para proteger datos personales? Identifica el número exacto y resume qué riesgos cubre.",
+      "checklist": "Debe identificar el artículo 18 y sus medidas administrativas, técnicas y físicas; no confundirlo con cancelación, oposición o plazos ARCO.",
+      "expectedArticleReferences": [
+        "18"
+      ],
+      "allowedAdditionalArticleReferences": [],
+      "expectedStatus": null,
+      "retrieval": {
+        "totalResults": 15,
+        "matchingFileResults": 2,
+        "selectedEvidenceChunks": 2,
+        "scores": [
+          0.9623350048668028,
+          0.9509629735442968
+        ]
+      },
+      "answer": "Texto expreso: El artículo que obliga al responsable a establecer medidas administrativas, técnicas y físicas es el Artículo 18 de la LFPDPPP. [LFPDPPP.pdf]\nExtracto verificado: “Artículo 18. Todo responsable deberá establecer y mantener medidas de seguridad administrativas, técnicas y físicas que permitan proteger los datos personales contra daño, pérdida, alteración, destrucción o el uso, acceso o tratamiento no autorizado.”\n\nTexto expreso: El Artículo 18 cubre riesgos como daño, pérdida, alteración, destrucción y uso, acceso o tratamiento no autorizado de datos personales. [LFPDPPP.pdf]\nExtracto verificado: “...que permitan proteger los datos personales contra daño, pérdida, alteración, destrucción o el uso, acceso o tratamiento no autorizado.”",
+      "evaluation": {
+        "status": "respondido",
+        "articleReferencesInAnswer": [
+          "18"
+        ],
+        "expectedArticleReferences": [
+          "18"
+        ],
+        "missingExpectedArticleReferences": [],
+        "allowedAdditionalArticleReferences": [],
+        "unapprovedAdditionalArticleReferences": [],
+        "missingConceptGroups": [],
+        "forbiddenClaims": [],
+        "groundingErrors": [
+          "Afirmación 1: fuente desconocida (LFPDPPP.pdf).",
+          "Afirmación 2: fuente desconocida (LFPDPPP.pdf)."
+        ],
+        "sourceIds": [],
+        "checks": {
+          "quoteIntegrity": false,
+          "articleAccuracy": true,
+          "articleScope": true,
+          "contentHeuristics": true,
+          "responseStatus": true,
+          "retrieval": true,
+          "overall": false
+        },
+        "overall": false
+      },
+      "error": null,
+      "structuredAnswer": {
+        "status": "respondido",
+        "claims": [
+          {
+            "statement": "El artículo que obliga al responsable a establecer medidas administrativas, técnicas y físicas es el Artículo 18 de la LFPDPPP.",
+            "category": "texto_expreso",
+            "source_id": "LFPDPPP.pdf",
+            "quote": "Artículo 18. Todo responsable deberá establecer y mantener medidas de seguridad administrativas, técnicas y físicas que permitan proteger los datos personales contra daño, pérdida, alteración, destrucción o el uso, acceso o tratamiento no autorizado.",
+            "article_references": [
+              "18"
+            ]
+          },
+          {
+            "statement": "El Artículo 18 cubre riesgos como daño, pérdida, alteración, destrucción y uso, acceso o tratamiento no autorizado de datos personales.",
+            "category": "texto_expreso",
+            "source_id": "LFPDPPP.pdf",
+            "quote": "...que permitan proteger los datos personales contra daño, pérdida, alteración, destrucción o el uso, acceso o tratamiento no autorizado.",
+            "article_references": [
+              "18"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "S1",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.9623350048668028,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n              CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                       Última Reforma DOF 14-11-2025\n              Secretaría General\n              Secretaría de Servicios Parlamentarios\n\n\n\n\n    Artículo 16. El responsable debe poner a disposición de las personas titulares el aviso de privacidad,\na través de formatos impresos, digitales, visuales, sonoros o cualquier otra tecnología de la siguiente\nmanera:\n\n   I.       Cuando los datos personales sean obtenidos personalmente a través de formatos impresos,\n            deberá ser dado a conocer en ese momento, salvo que se hubiera facilitado el aviso con\n            anterioridad, y\n\n   II.      Cuando los datos personales sean obtenidos por cualquier medio electrónico, óptico,\n            sonoro, visual, o a través de cualquier otra tecnología, deberá ser proporcionado en su\n            modalidad simplificada la que deberá contener al menos la información a que se refieren las\n            fracciones I a IV del artículo anterior, y señalar el sitio donde se podrá consultar el aviso de\n            privacidad integral.\n\n   Artículo 17. Cuando los datos no hayan sido obtenidos directamente de la persona titular, el\nresponsable deberá darle a conocer el cambio en el aviso de privacidad.\n\n    No resulta aplicable lo establecido en el párrafo anterior, cuando el tratamiento sea con fines\nhistóricos, estadísticos o científicos.\n\n    Cuando resulte imposible dar a conocer el aviso de privacidad a la persona titular de manera directa o\nello exija esfuerzos desproporcionados, el responsable podrá instrumentar medidas compensatorias en\ntérminos del Reglamento de esta Ley.\n\n   Artículo 18. Todo responsable deberá establecer y mantener medidas de seguridad administrativas,\ntécnicas y físicas que permitan proteger los datos personales contra daño, pérdida, alteración,\ndestrucción o el uso, acceso o tratamiento no autorizado.\n\n   Los responsables no adoptarán medidas de seguridad menores a aquellas que mantengan para el\nmanejo de su información. Asimismo, se tomará en cuenta el riesgo existente, las posibles\nconsecuencias para las personas titulares, la sensibilidad de los datos y el desarrollo tecnológico.\n\n     Artículo 19. Las vulneraciones de seguridad ocurridas en cualquier fase del tratamiento de datos\npersonales que afecten de forma significativa los derechos patrimoniales o morales de las personas\ntitulares le serán informadas de forma inmediata por el responsable, a fin de que pueda tomar las\nmedidas correspondientes a la defensa de sus derechos.\n\n    Artículo 20. El responsable o tercero deberá establecer controles o mecanismos que tengan por\nobjeto que todas aquellas personas que intervengan en cualquier fase del tratamiento de datos\npersonales, guarden confidencialidad respecto de estos, obligación que subsistirá aun después de\nfinalizar sus relaciones con el mismo.\n\n                                        Capítulo III\n               De los Derechos de las Personas Titulares de Datos Personales\n\n   Artículo 21. Cualquier persona titular o, en su caso, su representante legal, podrá ejercer los\nderechos ARCO previstos en la presente Ley."
+        },
+        {
+          "id": "S2",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.9509629735442968,
+          "text": "Artículo 18. Todo responsable deberá establecer y mantener medidas de seguridad administrativas,\ntécnicas y físicas que permitan proteger los datos personales contra daño, pérdida, alteración,\ndestrucción o el uso, acceso o tratamiento no autorizado.\n\n   Los responsables no adoptarán medidas de seguridad menores a aquellas que mantengan para el\nmanejo de su información. Asimismo, se tomará en cuenta el riesgo existente, las posibles\nconsecuencias para las personas titulares, la sensibilidad de los datos y el desarrollo tecnológico.\n\n     Artículo 19. Las vulneraciones de seguridad ocurridas en cualquier fase del tratamiento de datos\npersonales que afecten de forma significativa los derechos patrimoniales o morales de las personas\ntitulares le serán informadas de forma inmediata por el responsable, a fin de que pueda tomar las\nmedidas correspondientes a la defensa de sus derechos.\n\n    Artículo 20. El responsable o tercero deberá establecer controles o mecanismos que tengan por\nobjeto que todas aquellas personas que intervengan en cualquier fase del tratamiento de datos\npersonales, guarden confidencialidad respecto de estos, obligación que subsistirá aun después de\nfinalizar sus relaciones con el mismo.\n\n                                        Capítulo III\n               De los Derechos de las Personas Titulares de Datos Personales\n\n   Artículo 21. Cualquier persona titular o, en su caso, su representante legal, podrá ejercer los\nderechos ARCO previstos en la presente Ley.\n\n   El ejercicio de cualquiera de los derechos ARCO no es requisito previo ni impide el ejercicio de otro.\n\n   Los datos personales deben ser resguardados de tal manera que permitan el ejercicio sin dilación de\nestos derechos.\n\n\n\n                                                                6 de 24"
+        }
+      ]
+    },
+    {
+      "id": "LFPDPPP-BREACH-19",
+      "file": "LFPDPPP.pdf",
+      "question": "Según la LFPDPPP del Vector Store, ¿qué artículo regula informar a las personas titulares de una vulneración de seguridad que afecte significativamente sus derechos patrimoniales o morales, y en qué plazo? Da el número exacto y no confundas este deber con los plazos de solicitudes ARCO.",
+      "checklist": "Debe señalar artículo 19 y comunicación inmediata cuando se afecten significativamente derechos patrimoniales o morales; no atribuirlo al artículo 31.",
+      "expectedArticleReferences": [
+        "19"
+      ],
+      "allowedAdditionalArticleReferences": [],
+      "expectedStatus": null,
+      "retrieval": {
+        "totalResults": 15,
+        "matchingFileResults": 3,
+        "selectedEvidenceChunks": 3,
+        "scores": [
+          0.7951750140163808,
+          0.7920899588443749,
+          0.45269280656357763
+        ]
+      },
+      "answer": "Texto expreso: El artículo que regula la obligación de informar a las personas titulares de una vulneración de seguridad es el artículo 19. [S1]\nExtracto verificado: “Las vulneraciones de seguridad ocurridas en cualquier fase del tratamiento de datos personales que afecten de forma significativa los derechos patrimoniales o morales de las personas titulares le serán informadas de forma inmediata por el responsable, a fin de que pueda tomar las medidas correspondientes a la defensa de sus derechos.”",
+      "evaluation": {
+        "status": "respondido",
+        "articleReferencesInAnswer": [
+          "19"
+        ],
+        "expectedArticleReferences": [
+          "19"
+        ],
+        "missingExpectedArticleReferences": [],
+        "allowedAdditionalArticleReferences": [],
+        "unapprovedAdditionalArticleReferences": [],
+        "missingConceptGroups": [
+          [
+            "inmediata",
+            "inmediatamente"
+          ],
+          [
+            "patrimoniales",
+            "morales"
+          ]
+        ],
+        "forbiddenClaims": [],
+        "groundingErrors": [
+          "Afirmación 1: el extracto no muestra el encabezado del artículo 19."
+        ],
+        "sourceIds": [
+          "S1"
+        ],
+        "checks": {
+          "quoteIntegrity": false,
+          "articleAccuracy": true,
+          "articleScope": true,
+          "contentHeuristics": false,
+          "responseStatus": true,
+          "retrieval": true,
+          "overall": false
+        },
+        "overall": false
+      },
+      "error": null,
+      "structuredAnswer": {
+        "status": "respondido",
+        "claims": [
+          {
+            "statement": "El artículo que regula la obligación de informar a las personas titulares de una vulneración de seguridad es el artículo 19.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "Las vulneraciones de seguridad ocurridas en cualquier fase del tratamiento de datos personales que afecten de forma significativa los derechos patrimoniales o morales de las personas titulares le serán informadas de forma inmediata por el responsable, a fin de que pueda tomar las medidas correspondientes a la defensa de sus derechos.",
+            "article_references": [
+              "19"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "S1",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.7951750140163808,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n              CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                       Última Reforma DOF 14-11-2025\n              Secretaría General\n              Secretaría de Servicios Parlamentarios\n\n\n\n\n    Artículo 16. El responsable debe poner a disposición de las personas titulares el aviso de privacidad,\na través de formatos impresos, digitales, visuales, sonoros o cualquier otra tecnología de la siguiente\nmanera:\n\n   I.       Cuando los datos personales sean obtenidos personalmente a través de formatos impresos,\n            deberá ser dado a conocer en ese momento, salvo que se hubiera facilitado el aviso con\n            anterioridad, y\n\n   II.      Cuando los datos personales sean obtenidos por cualquier medio electrónico, óptico,\n            sonoro, visual, o a través de cualquier otra tecnología, deberá ser proporcionado en su\n            modalidad simplificada la que deberá contener al menos la información a que se refieren las\n            fracciones I a IV del artículo anterior, y señalar el sitio donde se podrá consultar el aviso de\n            privacidad integral.\n\n   Artículo 17. Cuando los datos no hayan sido obtenidos directamente de la persona titular, el\nresponsable deberá darle a conocer el cambio en el aviso de privacidad.\n\n    No resulta aplicable lo establecido en el párrafo anterior, cuando el tratamiento sea con fines\nhistóricos, estadísticos o científicos.\n\n    Cuando resulte imposible dar a conocer el aviso de privacidad a la persona titular de manera directa o\nello exija esfuerzos desproporcionados, el responsable podrá instrumentar medidas compensatorias en\ntérminos del Reglamento de esta Ley.\n\n   Artículo 18. Todo responsable deberá establecer y mantener medidas de seguridad administrativas,\ntécnicas y físicas que permitan proteger los datos personales contra daño, pérdida, alteración,\ndestrucción o el uso, acceso o tratamiento no autorizado.\n\n   Los responsables no adoptarán medidas de seguridad menores a aquellas que mantengan para el\nmanejo de su información. Asimismo, se tomará en cuenta el riesgo existente, las posibles\nconsecuencias para las personas titulares, la sensibilidad de los datos y el desarrollo tecnológico.\n\n     Artículo 19. Las vulneraciones de seguridad ocurridas en cualquier fase del tratamiento de datos\npersonales que afecten de forma significativa los derechos patrimoniales o morales de las personas\ntitulares le serán informadas de forma inmediata por el responsable, a fin de que pueda tomar las\nmedidas correspondientes a la defensa de sus derechos.\n\n    Artículo 20. El responsable o tercero deberá establecer controles o mecanismos que tengan por\nobjeto que todas aquellas personas que intervengan en cualquier fase del tratamiento de datos\npersonales, guarden confidencialidad respecto de estos, obligación que subsistirá aun después de\nfinalizar sus relaciones con el mismo.\n\n                                        Capítulo III\n               De los Derechos de las Personas Titulares de Datos Personales\n\n   Artículo 21. Cualquier persona titular o, en su caso, su representante legal, podrá ejercer los\nderechos ARCO previstos en la presente Ley."
+        },
+        {
+          "id": "S2",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.7920899588443749,
+          "text": "Artículo 18. Todo responsable deberá establecer y mantener medidas de seguridad administrativas,\ntécnicas y físicas que permitan proteger los datos personales contra daño, pérdida, alteración,\ndestrucción o el uso, acceso o tratamiento no autorizado.\n\n   Los responsables no adoptarán medidas de seguridad menores a aquellas que mantengan para el\nmanejo de su información. Asimismo, se tomará en cuenta el riesgo existente, las posibles\nconsecuencias para las personas titulares, la sensibilidad de los datos y el desarrollo tecnológico.\n\n     Artículo 19. Las vulneraciones de seguridad ocurridas en cualquier fase del tratamiento de datos\npersonales que afecten de forma significativa los derechos patrimoniales o morales de las personas\ntitulares le serán informadas de forma inmediata por el responsable, a fin de que pueda tomar las\nmedidas correspondientes a la defensa de sus derechos.\n\n    Artículo 20. El responsable o tercero deberá establecer controles o mecanismos que tengan por\nobjeto que todas aquellas personas que intervengan en cualquier fase del tratamiento de datos\npersonales, guarden confidencialidad respecto de estos, obligación que subsistirá aun después de\nfinalizar sus relaciones con el mismo.\n\n                                        Capítulo III\n               De los Derechos de las Personas Titulares de Datos Personales\n\n   Artículo 21. Cualquier persona titular o, en su caso, su representante legal, podrá ejercer los\nderechos ARCO previstos en la presente Ley.\n\n   El ejercicio de cualquiera de los derechos ARCO no es requisito previo ni impide el ejercicio de otro.\n\n   Los datos personales deben ser resguardados de tal manera que permitan el ejercicio sin dilación de\nestos derechos.\n\n\n\n                                                                6 de 24"
+        },
+        {
+          "id": "S3",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.45269280656357763,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n              CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                        Última Reforma DOF 14-11-2025\n              Secretaría General\n              Secretaría de Servicios Parlamentarios\n\n\n\n\n   I.       El apercibimiento para que el responsable lleve a cabo los actos solicitados por la persona\n            titular, en los términos previstos por esta Ley, tratándose de los supuestos previstos en la\n            fracción I del artículo anterior;\n\n   II.      Multa de 100 a 160,000 veces la Unidad de Medida y Actualización, en los casos previstos\n            en las fracciones II a VII del artículo anterior;\n\n   III.     Multa de 200 a 320,000 veces la Unidad de Medida y Actualización, en los casos previstos\n            en las fracciones VIII a XVIII del artículo anterior, y\n\n   IV.      En caso de que de manera reiterada persistan las infracciones citadas en los incisos\n            anteriores, se impondrá una multa adicional que irá de 100 a 320,000 veces la Unidad de\n            Medida y Actualización. En tratándose de infracciones cometidas en el tratamiento de datos\n            sensibles, las sanciones podrán incrementarse hasta por dos veces, los montos\n            establecidos.\n\n   Artículo 60. La Secretaría fundará y motivará sus resoluciones, considerando:\n\n   I.       La naturaleza del dato;\n\n   II.      La notoria improcedencia de la negativa del responsable, para realizar los actos solicitados\n            por la persona titular, en términos de esta Ley;\n\n   III.     El carácter intencional o no, de la acción u omisión constitutiva de la infracción;\n\n   IV.      La capacidad económica del responsable, y\n\n   V.       La reincidencia.\n\n   Artículo 61. Las sanciones que se señalan en este Capítulo se impondrán sin perjuicio de la\nresponsabilidad civil o penal que resulte.\n\n                                         Capítulo XII\n          De los Delitos en Materia del Tratamiento Indebido de Datos Personales\n\n   Artículo 62. Se impondrán de tres meses a tres años de prisión al que, estando autorizado para tratar\ndatos personales, con ánimo de lucro, provoque una vulneración de seguridad a las bases de datos bajo\nsu custodia.\n\n    Artículo 63. Se sancionará con prisión de seis meses a cinco años al que, con el fin de alcanzar un\nlucro indebido, trate datos personales mediante el engaño, aprovechándose del error en que se\nencuentre la persona titular o la persona autorizada para transmitirlos.\n\n   Artículo 64. Tratándose de datos personales sensibles, las penas a que se refiere este Capítulo se\nduplicarán.\n\n   Artículo Cuarto.- ……..\n\n                                                                Transitorios\n\n   Primero.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial\nde la Federación, con excepción de lo previsto en el transitorio Tercero de este instrumento.\n\n\n\n                                                                   17 de 24"
+        }
+      ]
+    },
+    {
+      "id": "LFPDPPP-CANCEL-25",
+      "file": "LFPDPPP.pdf",
+      "question": "¿Qué regula el artículo 25 de la LFPDPPP según el documento? Explica si trata de medidas de seguridad o de supuestos en los que el responsable no está obligado a cancelar datos personales. Cita el artículo exacto.",
+      "checklist": "Debe describir excepciones al deber de cancelación; no atribuir al artículo 25 las medidas de seguridad del artículo 18.",
+      "expectedArticleReferences": [
+        "25"
+      ],
+      "allowedAdditionalArticleReferences": [],
+      "expectedStatus": null,
+      "retrieval": {
+        "totalResults": 15,
+        "matchingFileResults": 4,
+        "selectedEvidenceChunks": 4,
+        "scores": [
+          0.9465452358191621,
+          0.9353815930688077,
+          0.745072823053213,
+          0.6679142467708582
+        ]
+      },
+      "answer": "Texto expreso: El artículo 25 de la LFPDPPP regula supuestos en los que el responsable no está obligado a cancelar datos personales. [S1]\nExtracto verificado: “El responsable no estará obligado a cancelar los datos personales cuando: I. Se refiera a las partes de un contrato privado, social o administrativo y sean necesarios para su desarrollo y cumplimiento; II. Deban ser tratados por disposición legal; III. Obstaculice las actuaciones judiciales o administrativas vinculadas a obligaciones fiscales, la investigación y persecución de delitos o la actualización de sanciones administrativas; IV. Sean necesarios para proteger los intereses jurídicamente tutelados de la persona titular; V. Sean necesarios para realizar una acción en función del interés público; VI. Sean necesarios para cumplir con una obligación legalmente adquirida por la persona titular, y VII. Sean objeto de tratamiento para la prevención o para el diagnóstico médico o la gestión de servicios de salud, siempre que dicho tratamiento se realice por un profesional de la salud sujeto a un deber de secreto.”",
+      "evaluation": {
+        "status": "respondido",
+        "articleReferencesInAnswer": [
+          "25"
+        ],
+        "expectedArticleReferences": [
+          "25"
+        ],
+        "missingExpectedArticleReferences": [],
+        "allowedAdditionalArticleReferences": [],
+        "unapprovedAdditionalArticleReferences": [],
+        "missingConceptGroups": [],
+        "forbiddenClaims": [],
+        "groundingErrors": [
+          "Afirmación 1: el extracto supera 800 caracteres.",
+          "Afirmación 1: el extracto no muestra el encabezado del artículo 25."
+        ],
+        "sourceIds": [
+          "S1"
+        ],
+        "checks": {
+          "quoteIntegrity": false,
+          "articleAccuracy": true,
+          "articleScope": true,
+          "contentHeuristics": true,
+          "responseStatus": true,
+          "retrieval": true,
+          "overall": false
+        },
+        "overall": false
+      },
+      "error": null,
+      "structuredAnswer": {
+        "status": "respondido",
+        "claims": [
+          {
+            "statement": "El artículo 25 de la LFPDPPP regula supuestos en los que el responsable no está obligado a cancelar datos personales.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "El responsable no estará obligado a cancelar los datos personales cuando: I. Se refiera a las partes de un contrato privado, social o administrativo y sean necesarios para su desarrollo y cumplimiento; II. Deban ser tratados por disposición legal; III. Obstaculice las actuaciones judiciales o administrativas vinculadas a obligaciones fiscales, la investigación y persecución de delitos o la actualización de sanciones administrativas; IV. Sean necesarios para proteger los intereses jurídicamente tutelados de la persona titular; V. Sean necesarios para realizar una acción en función del interés público; VI. Sean necesarios para cumplir con una obligación legalmente adquirida por la persona titular, y VII. Sean objeto de tratamiento para la prevención o para el diagnóstico médico o la gestión de servicios de salud, siempre que dicho tratamiento se realice por un profesional de la salud sujeto a un deber de secreto.",
+            "article_references": [
+              "25"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "S1",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.9465452358191621,
+          "text": "Artículo 25. El responsable no estará obligado a cancelar los datos personales cuando:\n\n   I.       Se refiera a las partes de un contrato privado, social o administrativo y sean necesarios para\n            su desarrollo y cumplimiento;\n\n   II.      Deban ser tratados por disposición legal;\n\n   III.     Obstaculice las actuaciones judiciales o administrativas vinculadas a obligaciones fiscales, la\n            investigación y persecución de delitos o la actualización de sanciones administrativas;\n\n   IV.      Sean necesarios para proteger los intereses jurídicamente tutelados de la persona titular;\n\n   V.       Sean necesarios para realizar una acción en función del interés público;\n\n   VI.      Sean necesarios para cumplir con una obligación legalmente adquirida por la persona titular,\n            y\n\n   VII.     Sean objeto de tratamiento para la prevención o para el diagnóstico médico o la gestión de\n            servicios de salud, siempre que dicho tratamiento se realice por un profesional de la salud\n            sujeto a un deber de secreto.\n\n    Artículo 26. La persona titular tendrá derecho en todo momento y por causa legítima a oponerse al\ntratamiento de sus datos o exigir que se cese en el mismo cuando:\n\n   I.       Exista causa legítima y su situación específica así lo requiera, lo cual debe justificar que aun\n            siendo lícito el tratamiento, el mismo debe cesar para evitar que su persistencia le cause un\n            daño o perjuicio, o\n\n\n\n\n                                                                7 de 24"
+        },
+        {
+          "id": "S2",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.9353815930688077,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n              CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                       Última Reforma DOF 14-11-2025\n              Secretaría General\n              Secretaría de Servicios Parlamentarios\n\n\n\n\n   Artículo 22. La persona titular tendrá derecho a acceder a sus datos personales que obren en\nposesión del responsable, así como conocer la información relacionada con las condiciones y\ngeneralidades de su tratamiento, a través del aviso de privacidad.\n\n   Artículo 23. La persona titular tendrá derecho a solicitar la rectificación o corrección de sus datos\npersonales, cuando resulten ser inexactos, incompletos o no se encuentren actualizados.\n\n   Artículo 24. La persona titular tendrá en todo momento el derecho a solicitar la cancelación de sus\ndatos personales de los archivos, registros, expedientes y sistemas del responsable, a fin de que los\nmismos ya no estén en posesión del responsable.\n\n   La cancelación de datos personales dará lugar a un periodo de bloqueo tras el cual se procederá a la\nsupresión del dato, el responsable podrá conservarlos exclusivamente para efectos de las\nresponsabilidades nacidas del tratamiento.\n\n    El periodo de bloqueo será equivalente al plazo de prescripción de las acciones derivadas de la\nrelación jurídica que funda el tratamiento en los términos de la Ley aplicable en la materia, y una vez\ncancelado el dato se dará aviso a la persona titular.\n\n    Cuando los datos personales hubiesen sido transmitidos con anterioridad a la fecha de rectificación o\ncancelación y sigan siendo tratados por terceros, el responsable deberá hacer de su conocimiento dicha\nsolicitud de rectificación o cancelación, para que proceda a efectuarla también.\n\n   Artículo 25. El responsable no estará obligado a cancelar los datos personales cuando:\n\n   I.       Se refiera a las partes de un contrato privado, social o administrativo y sean necesarios para\n            su desarrollo y cumplimiento;\n\n   II.      Deban ser tratados por disposición legal;\n\n   III.     Obstaculice las actuaciones judiciales o administrativas vinculadas a obligaciones fiscales, la\n            investigación y persecución de delitos o la actualización de sanciones administrativas;\n\n   IV.      Sean necesarios para proteger los intereses jurídicamente tutelados de la persona titular;\n\n   V.       Sean necesarios para realizar una acción en función del interés público;\n\n   VI.      Sean necesarios para cumplir con una obligación legalmente adquirida por la persona titular,\n            y\n\n   VII.     Sean objeto de tratamiento para la prevención o para el diagnóstico médico o la gestión de\n            servicios de salud, siempre que dicho tratamiento se realice por un profesional de la salud\n            sujeto a un deber de secreto.\n\n    Artículo 26. La persona titular tendrá derecho en todo momento y por causa legítima a oponerse al\ntratamiento de sus datos o exigir que se cese en el mismo cuando:\n\n   I.       Exista causa legítima y su situación específica así lo requiera, lo cual debe justificar que aun\n            siendo lícito el tratamiento, el mismo debe cesar para evitar que su persistencia le cause un\n            daño o perjuicio, o"
+        },
+        {
+          "id": "S3",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.745072823053213,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n           CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                      Última Reforma DOF 14-11-2025\n           Secretaría General\n           Secretaría de Servicios Parlamentarios\n\n\n\n\nIII.     Declarar dolosamente la inexistencia de datos personales, cuando exista total o\n         parcialmente en las bases de datos del responsable;\n\nIV.      Dar tratamiento a los datos personales en contravención a los principios establecidos en la\n         presente Ley;\n\nV.       Omitir en el aviso de privacidad, alguno o todos los elementos a que se refiere el artículo 15\n         de esta Ley;\n\nVI.      Mantener datos personales inexactos cuando resulte imputable al responsable, o no efectuar\n         las rectificaciones o cancelaciones de los mismos que legalmente procedan cuando resulten\n         afectados los derechos de las personas titulares;\n\nVII.     No cumplir con el apercibimiento a que se refiere la fracción I del artículo 59 de la presente\n         Ley;\n\nVIII.    Incumplir el deber de confidencialidad establecido en el artículo 20 de esta Ley;\n\nIX.      Cambiar sustancialmente la finalidad originaria del tratamiento de los datos, sin observar lo\n         dispuesto por el artículo 11 de esta Ley;\n\nX.       Transferir datos a terceros sin comunicar a estos el aviso de privacidad que contiene las\n         limitaciones a que la persona titular sujetó la divulgación de los mismos;\n\nXI.      Vulnerar la seguridad de bases de datos, locales, programas o equipos, cuando resulte\n         imputable al responsable;\n\nXII.     Llevar a cabo la transferencia o cesión de los datos personales, fuera de los casos en que\n         esté permitida por la Ley;\n\nXIII.    Recabar o transferir datos personales sin el consentimiento expreso de la persona titular, en\n         los casos en que éste sea exigible;\n\nXIV.     Obstruir los actos de verificación de la autoridad;\n\nXV.      Recabar datos en forma engañosa y fraudulenta;\n\nXVI.     Continuar con el uso ilegítimo de los datos personales cuando se ha solicitado el cese del\n         mismo por la Secretaría o las personas titulares;\n\nXVII.    Tratar los datos personales de manera que se afecte o impida el ejercicio de los derechos\n         ARCO establecidos en el artículo 16 de la Constitución Política de los Estados Unidos\n         Mexicanos;\n\nXVIII.   Crear bases de datos en contravención a lo dispuesto por el artículo 8, segundo párrafo de\n         esta Ley, y\n\nXIX.     Cualquier incumplimiento del responsable a las obligaciones establecidas a su cargo en\n         términos de lo previsto en la presente Ley.\n\nArtículo 59. Las infracciones a la presente Ley serán sancionadas por la Secretaría con:\n\n\n\n\n                                                             16 de 24"
+        },
+        {
+          "id": "S4",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.6679142467708582,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n               CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                      Última Reforma DOF 14-11-2025\n               Secretaría General\n               Secretaría de Servicios Parlamentarios\n\n\n\n\nde que los datos personales proporcionados serán tratados conforme a lo que acordaron en los términos\nestablecidos por esta Ley.\n\n   Artículo 7. Todo tratamiento de datos personales estará sujeto al consentimiento de la persona titular,\nsalvo las excepciones previstas por la presente Ley.\n\n   El consentimiento podrá manifestarse de forma expresa o tácita. Se deberá entender que el\nconsentimiento es expreso cuando la voluntad de la persona titular se manifieste verbalmente, por\nescrito, por medios electrónicos, ópticos, signos inequívocos o por cualquier otra tecnología.\n\n    El consentimiento será tácito cuando habiéndose puesto a disposición de la persona titular el aviso de\nprivacidad, esta no manifieste su voluntad en sentido contrario.\n\n    Por regla general será válido el consentimiento tácito, salvo que las disposiciones jurídicas aplicables\nexijan que la voluntad de la persona titular se manifieste expresamente.\n\n    Los datos financieros o patrimoniales requerirán el consentimiento expreso de la persona titular, salvo\nlas excepciones a que se refieren los artículos 9 y 36 de la presente Ley.\n\n    El consentimiento podrá ser revocado en cualquier momento sin que se le atribuyan efectos\nretroactivos. Para revocar el consentimiento, el responsable deberá, en el aviso de privacidad, establecer\nlos mecanismos y procedimientos para ello.\n\n   Artículo 8. Tratándose de datos personales sensibles, el responsable deberá obtener el\nconsentimiento expreso y por escrito de la persona titular para su tratamiento, a través de su firma\nautógrafa, firma electrónica, o cualquier mecanismo de autenticación que al efecto se establezca.\n\n   No podrán crearse bases de datos que contengan datos personales sensibles, sin que se justifique la\ncreación de las mismas para finalidades legítimas, concretas y acordes con las actividades o fines\nexplícitos que persigue el sujeto regulado.\n\n    Artículo 9. El responsable no estará obligado a recabar el consentimiento de la persona titular para el\ntratamiento de los datos personales cuando:\n\n   I.        Una disposición jurídica así lo disponga;\n\n   II.       Los datos personales figuren en fuentes de acceso público;\n\n   III.      Los datos personales se sometan a un procedimiento previo de disociación;\n\n   IV.       Los datos personales se requieran para ejercer un derecho o cumplir obligaciones derivadas\n             de una relación jurídica entre la persona titular y el responsable;\n\n   V.        Exista una situación de emergencia que potencialmente pueda dañar a un individuo en su\n             persona o en sus bienes;"
+        }
+      ]
+    },
+    {
+      "id": "LFPDPPP-OPPOSITION-26",
+      "file": "LFPDPPP.pdf",
+      "question": "¿Qué derecho regula el artículo 26 de la LFPDPPP y en qué supuestos puede la persona titular oponerse al tratamiento o pedir que cese? Identifica correctamente el artículo; no lo describas como una regla de seguridad de datos.",
+      "checklist": "Debe identificar el derecho de oposición y sus supuestos; no confundirlo con medidas de seguridad ni vulneraciones.",
+      "expectedArticleReferences": [
+        "26"
+      ],
+      "allowedAdditionalArticleReferences": [],
+      "expectedStatus": null,
+      "retrieval": {
+        "totalResults": 15,
+        "matchingFileResults": 5,
+        "selectedEvidenceChunks": 5,
+        "scores": [
+          0.8759845302794692,
+          0.8569389675359095,
+          0.8036214921651417,
+          0.6973588332946484,
+          0.6430602017960448
+        ]
+      },
+      "answer": "Texto expreso: El artículo 26 de la LFPDPPP regula el derecho de oposición de la persona titular respecto al tratamiento de sus datos personales. [S1]\nExtracto verificado: “Artículo 26. La persona titular tendrá derecho en todo momento y por causa legítima a oponerse al tratamiento de sus datos o exigir que se cese en el mismo cuando:”\n\nTexto expreso: La persona titular puede oponerse al tratamiento de sus datos cuando exista causa legítima que justifique que, aun siendo lícito, su persistencia cause daño o perjuicio. [S1]\nExtracto verificado: “I. Exista causa legítima y su situación específica así lo requiera, lo cual debe justificar que aun siendo lícito el tratamiento, el mismo debe cesar para evitar que su persistencia le cause un daño o perjuicio, o”\n\nTexto expreso: La persona titular también puede pedir que se cese el tratamiento si este es realizado mediante un tratamiento automatizado que le produzca efectos jurídicos no deseados. [S3]\nExtracto verificado: “II. Sus datos personales sean objeto de un tratamiento automatizado, el cual le produzca efectos jurídicos no deseados o afecte de manera significativa sus intereses, derechos o libertades...”",
+      "evaluation": {
+        "status": "respondido",
+        "articleReferencesInAnswer": [
+          "26"
+        ],
+        "expectedArticleReferences": [
+          "26"
+        ],
+        "missingExpectedArticleReferences": [],
+        "allowedAdditionalArticleReferences": [],
+        "unapprovedAdditionalArticleReferences": [],
+        "missingConceptGroups": [],
+        "forbiddenClaims": [],
+        "groundingErrors": [
+          "Afirmación 2: referencias declaradas que no aparecen en el texto (26).",
+          "Afirmación 3: el extracto no coincide literalmente con S3.",
+          "Afirmación 3: referencias declaradas que no aparecen en el texto (26)."
+        ],
+        "sourceIds": [
+          "S1",
+          "S3"
+        ],
+        "checks": {
+          "quoteIntegrity": false,
+          "articleAccuracy": true,
+          "articleScope": true,
+          "contentHeuristics": true,
+          "responseStatus": true,
+          "retrieval": true,
+          "overall": false
+        },
+        "overall": false
+      },
+      "error": null,
+      "structuredAnswer": {
+        "status": "respondido",
+        "claims": [
+          {
+            "statement": "El artículo 26 de la LFPDPPP regula el derecho de oposición de la persona titular respecto al tratamiento de sus datos personales.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "Artículo 26. La persona titular tendrá derecho en todo momento y por causa legítima a oponerse al tratamiento de sus datos o exigir que se cese en el mismo cuando:",
+            "article_references": [
+              "26"
+            ]
+          },
+          {
+            "statement": "La persona titular puede oponerse al tratamiento de sus datos cuando exista causa legítima que justifique que, aun siendo lícito, su persistencia cause daño o perjuicio.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "I. Exista causa legítima y su situación específica así lo requiera, lo cual debe justificar que aun siendo lícito el tratamiento, el mismo debe cesar para evitar que su persistencia le cause un daño o perjuicio, o",
+            "article_references": [
+              "26"
+            ]
+          },
+          {
+            "statement": "La persona titular también puede pedir que se cese el tratamiento si este es realizado mediante un tratamiento automatizado que le produzca efectos jurídicos no deseados.",
+            "category": "texto_expreso",
+            "source_id": "S3",
+            "quote": "II. Sus datos personales sean objeto de un tratamiento automatizado, el cual le produzca efectos jurídicos no deseados o afecte de manera significativa sus intereses, derechos o libertades...",
+            "article_references": [
+              "26"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "S1",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.8759845302794692,
+          "text": "Artículo 25. El responsable no estará obligado a cancelar los datos personales cuando:\n\n   I.       Se refiera a las partes de un contrato privado, social o administrativo y sean necesarios para\n            su desarrollo y cumplimiento;\n\n   II.      Deban ser tratados por disposición legal;\n\n   III.     Obstaculice las actuaciones judiciales o administrativas vinculadas a obligaciones fiscales, la\n            investigación y persecución de delitos o la actualización de sanciones administrativas;\n\n   IV.      Sean necesarios para proteger los intereses jurídicamente tutelados de la persona titular;\n\n   V.       Sean necesarios para realizar una acción en función del interés público;\n\n   VI.      Sean necesarios para cumplir con una obligación legalmente adquirida por la persona titular,\n            y\n\n   VII.     Sean objeto de tratamiento para la prevención o para el diagnóstico médico o la gestión de\n            servicios de salud, siempre que dicho tratamiento se realice por un profesional de la salud\n            sujeto a un deber de secreto.\n\n    Artículo 26. La persona titular tendrá derecho en todo momento y por causa legítima a oponerse al\ntratamiento de sus datos o exigir que se cese en el mismo cuando:\n\n   I.       Exista causa legítima y su situación específica así lo requiera, lo cual debe justificar que aun\n            siendo lícito el tratamiento, el mismo debe cesar para evitar que su persistencia le cause un\n            daño o perjuicio, o\n\n\n\n\n                                                                7 de 24"
+        },
+        {
+          "id": "S2",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.8569389675359095,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n              CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                       Última Reforma DOF 14-11-2025\n              Secretaría General\n              Secretaría de Servicios Parlamentarios\n\n\n\n\n   Artículo 22. La persona titular tendrá derecho a acceder a sus datos personales que obren en\nposesión del responsable, así como conocer la información relacionada con las condiciones y\ngeneralidades de su tratamiento, a través del aviso de privacidad.\n\n   Artículo 23. La persona titular tendrá derecho a solicitar la rectificación o corrección de sus datos\npersonales, cuando resulten ser inexactos, incompletos o no se encuentren actualizados.\n\n   Artículo 24. La persona titular tendrá en todo momento el derecho a solicitar la cancelación de sus\ndatos personales de los archivos, registros, expedientes y sistemas del responsable, a fin de que los\nmismos ya no estén en posesión del responsable.\n\n   La cancelación de datos personales dará lugar a un periodo de bloqueo tras el cual se procederá a la\nsupresión del dato, el responsable podrá conservarlos exclusivamente para efectos de las\nresponsabilidades nacidas del tratamiento.\n\n    El periodo de bloqueo será equivalente al plazo de prescripción de las acciones derivadas de la\nrelación jurídica que funda el tratamiento en los términos de la Ley aplicable en la materia, y una vez\ncancelado el dato se dará aviso a la persona titular.\n\n    Cuando los datos personales hubiesen sido transmitidos con anterioridad a la fecha de rectificación o\ncancelación y sigan siendo tratados por terceros, el responsable deberá hacer de su conocimiento dicha\nsolicitud de rectificación o cancelación, para que proceda a efectuarla también.\n\n   Artículo 25. El responsable no estará obligado a cancelar los datos personales cuando:\n\n   I.       Se refiera a las partes de un contrato privado, social o administrativo y sean necesarios para\n            su desarrollo y cumplimiento;\n\n   II.      Deban ser tratados por disposición legal;\n\n   III.     Obstaculice las actuaciones judiciales o administrativas vinculadas a obligaciones fiscales, la\n            investigación y persecución de delitos o la actualización de sanciones administrativas;\n\n   IV.      Sean necesarios para proteger los intereses jurídicamente tutelados de la persona titular;\n\n   V.       Sean necesarios para realizar una acción en función del interés público;\n\n   VI.      Sean necesarios para cumplir con una obligación legalmente adquirida por la persona titular,\n            y\n\n   VII.     Sean objeto de tratamiento para la prevención o para el diagnóstico médico o la gestión de\n            servicios de salud, siempre que dicho tratamiento se realice por un profesional de la salud\n            sujeto a un deber de secreto.\n\n    Artículo 26. La persona titular tendrá derecho en todo momento y por causa legítima a oponerse al\ntratamiento de sus datos o exigir que se cese en el mismo cuando:\n\n   I.       Exista causa legítima y su situación específica así lo requiera, lo cual debe justificar que aun\n            siendo lícito el tratamiento, el mismo debe cesar para evitar que su persistencia le cause un\n            daño o perjuicio, o"
+        },
+        {
+          "id": "S3",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.8036214921651417,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n                CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                     Última Reforma DOF 14-11-2025\n                Secretaría General\n                Secretaría de Servicios Parlamentarios\n\n\n\n\n   II.         Sus datos personales sean objeto de un tratamiento automatizado, el cual le produzca\n               efectos jurídicos no deseados o afecte de manera significativa sus intereses, derechos o\n               libertades, y estén destinados a evaluar, sin intervención humana, determinados aspectos\n               personales de la misma o analizar o predecir, en particular, su rendimiento profesional,\n               situación económica, estado de salud, preferencias sexuales, fiabilidad o comportamiento.\n\n   No procederá el ejercicio del derecho de oposición en aquellos casos en los que el tratamiento sea\nnecesario para el cumplimiento de una obligación legal impuesta al responsable.\n\n                                           Capítulo IV\n         Del Ejercicio de los Derechos de Acceso, Rectificación, Cancelación y Oposición\n\n  Artículo 27. La persona titular o su representante legal podrán solicitar al responsable en cualquier\nmomento el ejercicio de los derechos ARCO, respecto de los datos personales que le conciernen.\n\n   Artículo 28. La solicitud para el ejercicio de los derechos ARCO deberá contener y acompañar lo\nsiguiente:\n\n   I.          El nombre de la persona titular y su domicilio o cualquier otro medio para recibir\n               notificaciones;\n\n   II.         Los documentos que acrediten la identidad de la persona titular o, en su caso, la\n               personalidad e identidad de su representante;\n\n   III.        La descripción clara y precisa de los datos personales respecto de los que se busca ejercer\n               alguno de los derechos ARCO, salvo que se trate del derecho de acceso;\n\n   IV.         La descripción del derecho ARCO que se pretende ejercer, o bien, lo que solicita la persona\n               titular, y\n\n   V.          Cualquier otro elemento o documento que facilite la localización de los datos personales.\n\n    Artículo 29. Todo responsable fomentará la protección de datos personales al interior de la\norganización y designará a una persona, o departamento de datos personales, quien dará trámite a las\nsolicitudes de las personas titulares, para el ejercicio de los derechos a que se refiere la presente Ley.\n\n   Artículo 30. En el caso de solicitudes para el ejercicio del derecho de rectificación de datos\npersonales, la persona titular deberá indicar, además de lo señalado en el artículo 29 de esta Ley, las\nmodificaciones a realizarse y aportar la documentación que sustente su petición.\n\n   Artículo 31. El responsable comunicará a la persona titular, en un plazo máximo de veinte días,\ncontados desde la fecha en que se recibió la solicitud para el ejercicio de los derechos ARCO, la\ndeterminación adoptada, a efecto de que, si resulta procedente, se haga efectiva la misma dentro de los\nquince días siguientes a la fecha en que se comunica la respuesta. Tratándose de solicitudes para el\nejercicio del derecho de acceso a datos personales, procederá la entrega previa acreditación de la\nidentidad del titular o representante legal, según corresponda."
+        },
+        {
+          "id": "S4",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.6973588332946484,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n              CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                        Última Reforma DOF 14-11-2025\n              Secretaría General\n              Secretaría de Servicios Parlamentarios\n\n\n\n\n   I.       El apercibimiento para que el responsable lleve a cabo los actos solicitados por la persona\n            titular, en los términos previstos por esta Ley, tratándose de los supuestos previstos en la\n            fracción I del artículo anterior;\n\n   II.      Multa de 100 a 160,000 veces la Unidad de Medida y Actualización, en los casos previstos\n            en las fracciones II a VII del artículo anterior;\n\n   III.     Multa de 200 a 320,000 veces la Unidad de Medida y Actualización, en los casos previstos\n            en las fracciones VIII a XVIII del artículo anterior, y\n\n   IV.      En caso de que de manera reiterada persistan las infracciones citadas en los incisos\n            anteriores, se impondrá una multa adicional que irá de 100 a 320,000 veces la Unidad de\n            Medida y Actualización. En tratándose de infracciones cometidas en el tratamiento de datos\n            sensibles, las sanciones podrán incrementarse hasta por dos veces, los montos\n            establecidos.\n\n   Artículo 60. La Secretaría fundará y motivará sus resoluciones, considerando:\n\n   I.       La naturaleza del dato;\n\n   II.      La notoria improcedencia de la negativa del responsable, para realizar los actos solicitados\n            por la persona titular, en términos de esta Ley;\n\n   III.     El carácter intencional o no, de la acción u omisión constitutiva de la infracción;\n\n   IV.      La capacidad económica del responsable, y\n\n   V.       La reincidencia.\n\n   Artículo 61. Las sanciones que se señalan en este Capítulo se impondrán sin perjuicio de la\nresponsabilidad civil o penal que resulte.\n\n                                         Capítulo XII\n          De los Delitos en Materia del Tratamiento Indebido de Datos Personales\n\n   Artículo 62. Se impondrán de tres meses a tres años de prisión al que, estando autorizado para tratar\ndatos personales, con ánimo de lucro, provoque una vulneración de seguridad a las bases de datos bajo\nsu custodia.\n\n    Artículo 63. Se sancionará con prisión de seis meses a cinco años al que, con el fin de alcanzar un\nlucro indebido, trate datos personales mediante el engaño, aprovechándose del error en que se\nencuentre la persona titular o la persona autorizada para transmitirlos.\n\n   Artículo 64. Tratándose de datos personales sensibles, las penas a que se refiere este Capítulo se\nduplicarán.\n\n   Artículo Cuarto.- ……..\n\n                                                                Transitorios\n\n   Primero.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial\nde la Federación, con excepción de lo previsto en el transitorio Tercero de este instrumento.\n\n\n\n                                                                   17 de 24"
+        },
+        {
+          "id": "S5",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.6430602017960448,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n               CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                             Última Reforma DOF 14-11-2025\n               Secretaría General\n               Secretaría de Servicios Parlamentarios\n\n\n\n\n        LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS\n                                  PARTICULARES\n                  Nueva Ley publicada en el Diario Oficial de la Federación el 20 de marzo de 2025\n\n                                                              TEXTO VIGENTE\n                                                 Última reforma publicada DOF 14-11-2025\n\n\n\n\nAl margen un sello con el Escudo Nacional, que dice: Estados Unidos Mexicanos.- Presidencia de la\nRepública.\n\n   CLAUDIA SHEINBAUM PARDO, Presidenta de los Estados Unidos Mexicanos, a sus habitantes\nsabed:\n\n   Que el Honorable Congreso de la Unión, se ha servido dirigirme el siguiente\n\n                                                                 DECRETO\n\n   \"EL CONGRESO GENERAL DE LOS ESTADOS UNIDOS MEXICANOS, DECRETA:\n\n  SE EXPIDEN LA LEY GENERAL DE TRANSPARENCIA Y ACCESO A LA INFORMACIÓN\nPÚBLICA; LA LEY GENERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE\nSUJETOS OBLIGADOS; LA LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN\nPOSESIÓN DE LOS PARTICULARES; Y SE REFORMA EL ARTÍCULO 37, FRACCIÓN XV, DE LA\nLEY ORGÁNICA DE LA ADMINISTRACIÓN PÚBLICA FEDERAL\n\n   Artículo Primero y Artículo Segundo.- ……..\n\n   Artículo Tercero.- Se expide la Ley Federal de Protección de Datos Personales en Posesión de los\nParticulares, para quedar como sigue:\n\n    LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS\n                              PARTICULARES\n\n                                                               Capítulo I\n                                                        Disposiciones Generales\n\n    Artículo 1. La presente Ley es de orden público y de observancia general en todo el territorio nacional\ny tiene por objeto la protección de los datos personales en posesión de los particulares, con la finalidad\nde regular su tratamiento legítimo, controlado e informado, a efecto de garantizar la privacidad y el\nderecho a la autodeterminación informativa de las personas.\n\n   Quedan exceptuados de la aplicación de la presente Ley:\n\n   I.        Las sociedades de información crediticia en los supuestos de la Ley para Regular las\n             Sociedades de Información Crediticia y demás disposiciones aplicables, y\n\n   II.       Las personas que lleven a cabo la recolección y almacenamiento de datos personales, que\n             sea para uso exclusivamente personal, y sin fines de divulgación o utilización comercial.\n\n\n\n\n                                                                  1 de 24"
+        }
+      ]
+    },
+    {
+      "id": "LFPDPPP-ARCO-31",
+      "file": "LFPDPPP.pdf",
+      "question": "¿Qué plazos establece el artículo 31 de la LFPDPPP para comunicar la determinación de una solicitud ARCO y hacerla efectiva cuando proceda? Responde con los números exactos y el objeto de cada plazo.",
+      "checklist": "Debe indicar 20 días para comunicar la determinación y 15 días siguientes para hacerla efectiva; no presentarlos como plazos para avisar vulneraciones.",
+      "expectedArticleReferences": [
+        "31"
+      ],
+      "allowedAdditionalArticleReferences": [],
+      "expectedStatus": null,
+      "retrieval": {
+        "totalResults": 15,
+        "matchingFileResults": 3,
+        "selectedEvidenceChunks": 3,
+        "scores": [
+          0.9658938357412583,
+          0.9576778979129733,
+          0.7332725991165457
+        ]
+      },
+      "answer": "Texto expreso: El responsable comunicará a la persona titular la determinación adoptada en un plazo máximo de veinte días. [S1]\nExtracto verificado: “El responsable comunicará a la persona titular, en un plazo máximo de veinte días, contados desde la fecha en que se recibió la solicitud para el ejercicio de los derechos ARCO, la determinación adoptada.”\n\nTexto expreso: Si la determinación es procedente, deberá hacerse efectiva dentro de los quince días siguientes a la comunicación de la respuesta. [S1]\nExtracto verificado: “a efecto de que, si resulta procedente, se haga efectiva la misma dentro de los quince días siguientes a la fecha en que se comunica la respuesta.”",
+      "evaluation": {
+        "status": "respondido",
+        "articleReferencesInAnswer": [],
+        "expectedArticleReferences": [
+          "31"
+        ],
+        "missingExpectedArticleReferences": [
+          "31"
+        ],
+        "allowedAdditionalArticleReferences": [],
+        "unapprovedAdditionalArticleReferences": [],
+        "missingConceptGroups": [
+          [
+            "arco"
+          ]
+        ],
+        "forbiddenClaims": [],
+        "groundingErrors": [
+          "Afirmación 1: el extracto no coincide literalmente con S1.",
+          "Afirmación 1: referencias declaradas que no aparecen en el texto (31).",
+          "Afirmación 2: referencias declaradas que no aparecen en el texto (31)."
+        ],
+        "sourceIds": [
+          "S1"
+        ],
+        "checks": {
+          "quoteIntegrity": false,
+          "articleAccuracy": false,
+          "articleScope": true,
+          "contentHeuristics": false,
+          "responseStatus": true,
+          "retrieval": true,
+          "overall": false
+        },
+        "overall": false
+      },
+      "error": null,
+      "structuredAnswer": {
+        "status": "respondido",
+        "claims": [
+          {
+            "statement": "El responsable comunicará a la persona titular la determinación adoptada en un plazo máximo de veinte días.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "El responsable comunicará a la persona titular, en un plazo máximo de veinte días, contados desde la fecha en que se recibió la solicitud para el ejercicio de los derechos ARCO, la determinación adoptada.",
+            "article_references": [
+              "31"
+            ]
+          },
+          {
+            "statement": "Si la determinación es procedente, deberá hacerse efectiva dentro de los quince días siguientes a la comunicación de la respuesta.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "a efecto de que, si resulta procedente, se haga efectiva la misma dentro de los quince días siguientes a la fecha en que se comunica la respuesta.",
+            "article_references": [
+              "31"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "S1",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.9658938357412583,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n                CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                     Última Reforma DOF 14-11-2025\n                Secretaría General\n                Secretaría de Servicios Parlamentarios\n\n\n\n\n   II.         Sus datos personales sean objeto de un tratamiento automatizado, el cual le produzca\n               efectos jurídicos no deseados o afecte de manera significativa sus intereses, derechos o\n               libertades, y estén destinados a evaluar, sin intervención humana, determinados aspectos\n               personales de la misma o analizar o predecir, en particular, su rendimiento profesional,\n               situación económica, estado de salud, preferencias sexuales, fiabilidad o comportamiento.\n\n   No procederá el ejercicio del derecho de oposición en aquellos casos en los que el tratamiento sea\nnecesario para el cumplimiento de una obligación legal impuesta al responsable.\n\n                                           Capítulo IV\n         Del Ejercicio de los Derechos de Acceso, Rectificación, Cancelación y Oposición\n\n  Artículo 27. La persona titular o su representante legal podrán solicitar al responsable en cualquier\nmomento el ejercicio de los derechos ARCO, respecto de los datos personales que le conciernen.\n\n   Artículo 28. La solicitud para el ejercicio de los derechos ARCO deberá contener y acompañar lo\nsiguiente:\n\n   I.          El nombre de la persona titular y su domicilio o cualquier otro medio para recibir\n               notificaciones;\n\n   II.         Los documentos que acrediten la identidad de la persona titular o, en su caso, la\n               personalidad e identidad de su representante;\n\n   III.        La descripción clara y precisa de los datos personales respecto de los que se busca ejercer\n               alguno de los derechos ARCO, salvo que se trate del derecho de acceso;\n\n   IV.         La descripción del derecho ARCO que se pretende ejercer, o bien, lo que solicita la persona\n               titular, y\n\n   V.          Cualquier otro elemento o documento que facilite la localización de los datos personales.\n\n    Artículo 29. Todo responsable fomentará la protección de datos personales al interior de la\norganización y designará a una persona, o departamento de datos personales, quien dará trámite a las\nsolicitudes de las personas titulares, para el ejercicio de los derechos a que se refiere la presente Ley.\n\n   Artículo 30. En el caso de solicitudes para el ejercicio del derecho de rectificación de datos\npersonales, la persona titular deberá indicar, además de lo señalado en el artículo 29 de esta Ley, las\nmodificaciones a realizarse y aportar la documentación que sustente su petición.\n\n   Artículo 31. El responsable comunicará a la persona titular, en un plazo máximo de veinte días,\ncontados desde la fecha en que se recibió la solicitud para el ejercicio de los derechos ARCO, la\ndeterminación adoptada, a efecto de que, si resulta procedente, se haga efectiva la misma dentro de los\nquince días siguientes a la fecha en que se comunica la respuesta. Tratándose de solicitudes para el\nejercicio del derecho de acceso a datos personales, procederá la entrega previa acreditación de la\nidentidad del titular o representante legal, según corresponda."
+        },
+        {
+          "id": "S2",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.9576778979129733,
+          "text": "III.        La descripción clara y precisa de los datos personales respecto de los que se busca ejercer\n               alguno de los derechos ARCO, salvo que se trate del derecho de acceso;\n\n   IV.         La descripción del derecho ARCO que se pretende ejercer, o bien, lo que solicita la persona\n               titular, y\n\n   V.          Cualquier otro elemento o documento que facilite la localización de los datos personales.\n\n    Artículo 29. Todo responsable fomentará la protección de datos personales al interior de la\norganización y designará a una persona, o departamento de datos personales, quien dará trámite a las\nsolicitudes de las personas titulares, para el ejercicio de los derechos a que se refiere la presente Ley.\n\n   Artículo 30. En el caso de solicitudes para el ejercicio del derecho de rectificación de datos\npersonales, la persona titular deberá indicar, además de lo señalado en el artículo 29 de esta Ley, las\nmodificaciones a realizarse y aportar la documentación que sustente su petición.\n\n   Artículo 31. El responsable comunicará a la persona titular, en un plazo máximo de veinte días,\ncontados desde la fecha en que se recibió la solicitud para el ejercicio de los derechos ARCO, la\ndeterminación adoptada, a efecto de que, si resulta procedente, se haga efectiva la misma dentro de los\nquince días siguientes a la fecha en que se comunica la respuesta. Tratándose de solicitudes para el\nejercicio del derecho de acceso a datos personales, procederá la entrega previa acreditación de la\nidentidad del titular o representante legal, según corresponda.\n\n   Los plazos antes referidos podrán ser ampliados una sola vez por un periodo igual, siempre y cuando\nasí lo justifiquen las circunstancias del caso.\n\n\n\n\n                                                                  8 de 24"
+        },
+        {
+          "id": "S3",
+          "filename": "LFPDPPP.pdf",
+          "score": 0.7332725991165457,
+          "text": "LEY FEDERAL DE PROTECCIÓN DE DATOS PERSONALES EN POSESIÓN DE LOS PARTICULARES\n               CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                      Última Reforma DOF 14-11-2025\n               Secretaría General\n               Secretaría de Servicios Parlamentarios\n\n\n\n\n   II.       La persona titular se desista de manera expresa;\n\n   III.      Admitida la solicitud de protección de datos, sobrevenga una causal de improcedencia, y\n\n   IV.       Por cualquier motivo quede sin materia la misma.\n\n   Artículo 49. La Secretaría podrá en cualquier momento del procedimiento buscar una conciliación\nentre la persona titular de los datos y el responsable.\n\n   De llegarse a un acuerdo de conciliación entre ambos, éste se hará constar por escrito y tendrá\nefectos vinculantes. La solicitud de protección de datos quedará sin materia y la Secretaría verificará el\ncumplimiento del acuerdo respectivo.\n\n   Para efectos de la conciliación a que se alude en el presente ordenamiento, se estará al\nprocedimiento que se establezca en el Reglamento de esta Ley.\n\n    Artículo 50. Interpuesta la solicitud de protección de datos ante la falta de respuesta a una solicitud\nen ejercicio de los derechos ARCO por parte del responsable, la Secretaría dará vista al citado\nresponsable para que, en un plazo no mayor a diez días, acredite haber respondido en tiempo y forma la\nsolicitud, o bien dé respuesta a la misma. En caso de que la respuesta atienda a lo solicitado, la solicitud\nde protección de datos se considerará improcedente y la Secretaría deberá sobreseerlo.\n\n    En el segundo caso, la Secretaría emitirá su resolución con base en el contenido de la solicitud\noriginal y la respuesta del responsable que alude el párrafo anterior.\n\n    Si la resolución de la Secretaría a que se refiere el párrafo anterior determina la procedencia de la\nsolicitud, el responsable procederá a su cumplimiento, sin costo alguno para la persona titular, debiendo\ncubrir el responsable todos los costos generados por la reproducción correspondiente y gastos de envío.\n\n   Artículo 51. Contra las resoluciones de la Secretaría, los particulares podrán promover juicio de\namparo. Los juicios de amparo serán sustanciados por jueces y tribunales especializados en los términos\ndel artículo 94 de la Constitución Política de los Estados Unidos Mexicanos.\n\n    Artículo 52. Todas las resoluciones de la Secretaría serán susceptibles de difundirse públicamente en\nversiones públicas, eliminando aquellas referencias a la persona titular de los datos que lo identifiquen o\nlo hagan identificable.\n\n   Artículo 53. Las personas titulares que consideren que han sufrido un daño o lesión en sus bienes o\nderechos como consecuencia del incumplimiento a lo dispuesto en la presente Ley por el responsable o\nla persona encargada, podrán ejercer los derechos que estimen pertinentes para efectos de la\nindemnización que proceda, en términos de las disposiciones legales correspondientes.\n\n                                                          Capítulo IX\n                                               Del Procedimiento de Verificación"
+        }
+      ]
+    },
+    {
+      "id": "CPF-UNAUTHORIZED-211BIS2",
+      "file": "CPF.pdf",
+      "question": "Conforme exclusivamente al Código Penal Federal del Vector Store, una persona sin autorización copia información de un sistema informático del Estado protegido por un mecanismo de seguridad. ¿Qué artículo contempla ese supuesto? Da el número completo y, si comparas el supuesto autorizado, cítalo por separado.",
+      "checklist": "Debe identificar artículo 211 bis 2 para conocer o copiar sin autorización información de sistemas del Estado protegidos; no atribuirlo al 211 bis 3.",
+      "expectedArticleReferences": [
+        "211 bis 2"
+      ],
+      "allowedAdditionalArticleReferences": [
+        "211 bis 3"
+      ],
+      "expectedStatus": null,
+      "retrieval": {
+        "totalResults": 15,
+        "matchingFileResults": 8,
+        "selectedEvidenceChunks": 8,
+        "scores": [
+          0.9637983291337927,
+          0.9126370835673602,
+          0.9025027577608894,
+          0.8826447802876128,
+          0.6426013079684686,
+          0.6357025563234856,
+          0.6231562664928091,
+          0.5800985651069154
+        ]
+      },
+      "answer": "Texto expreso: El artículo aplicable a la copia no autorizada de información de un sistema informático del Estado protegido por un mecanismo de seguridad es el Artículo 211 bis 2. [S1]\nExtracto verificado: “Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática del Estado, protegidos por algún mecanismo de seguridad, se le impondrán de seis meses a dos años de prisión y de cien a trescientos días multa.”\n\nTexto expreso: Comparado con el supuesto autorizado, el Artículo 211 bis 3 establece sanciones diferentes cuando la copia se realiza estando autorizado. [S3]\nExtracto verificado: “Al que estando autorizado para acceder a sistemas, equipos o medios de almacenamiento informáticos, indebidamente copie información que contengan, se le impondrán de uno a cuatro años de prisión y de ciento cincuenta a cuatrocientos cincuenta días multa.”",
+      "evaluation": {
+        "status": "respondido",
+        "articleReferencesInAnswer": [
+          "211 bis 2",
+          "211 bis 3"
+        ],
+        "expectedArticleReferences": [
+          "211 bis 2"
+        ],
+        "missingExpectedArticleReferences": [],
+        "allowedAdditionalArticleReferences": [
+          "211 bis 3"
+        ],
+        "unapprovedAdditionalArticleReferences": [],
+        "missingConceptGroups": [
+          [
+            "sin autorización",
+            "sin autorizacion"
+          ]
+        ],
+        "forbiddenClaims": [],
+        "groundingErrors": [
+          "Afirmación 1: el extracto no muestra el encabezado del artículo 211 bis 2.",
+          "Afirmación 2: el extracto no coincide literalmente con S3.",
+          "Afirmación 2: el extracto no muestra el encabezado del artículo 211 bis 3."
+        ],
+        "sourceIds": [
+          "S1",
+          "S3"
+        ],
+        "checks": {
+          "quoteIntegrity": false,
+          "articleAccuracy": true,
+          "articleScope": true,
+          "contentHeuristics": false,
+          "responseStatus": true,
+          "retrieval": true,
+          "overall": false
+        },
+        "overall": false
+      },
+      "error": null,
+      "structuredAnswer": {
+        "status": "respondido",
+        "claims": [
+          {
+            "statement": "El artículo aplicable a la copia no autorizada de información de un sistema informático del Estado protegido por un mecanismo de seguridad es el Artículo 211 bis 2.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática del Estado, protegidos por algún mecanismo de seguridad, se le impondrán de seis meses a dos años de prisión y de cien a trescientos días multa.",
+            "article_references": [
+              "211 bis 2"
+            ]
+          },
+          {
+            "statement": "Comparado con el supuesto autorizado, el Artículo 211 bis 3 establece sanciones diferentes cuando la copia se realiza estando autorizado.",
+            "category": "texto_expreso",
+            "source_id": "S3",
+            "quote": "Al que estando autorizado para acceder a sistemas, equipos o medios de almacenamiento informáticos, indebidamente copie información que contengan, se le impondrán de uno a cuatro años de prisión y de ciento cincuenta a cuatrocientos cincuenta días multa.",
+            "article_references": [
+              "211 bis 3"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "S1",
+          "filename": "CPF.pdf",
+          "score": 0.9637983291337927,
+          "text": "Artículo 211.- La sanción será de uno a cinco años, multa de cincuenta a quinientos pesos y\nsuspensión de profesión en su caso, de dos meses a un año, cuando la revelación punible sea hecha por\npersona que presta servicios profesionales o técnicos o por funcionario o empleado público o cuando el\nsecreto revelado o publicado sea de carácter industrial.\n\n   Artículo 211 Bis.- A quien revele, divulgue o utilice indebidamente o en perjuicio de otro, información\no imágenes obtenidas en una intervención de comunicación privada, se le aplicarán sanciones de seis a\ndoce años de prisión y de trescientos a seiscientos días multa.\n                                                                                                  Artículo adicionado DOF 07-11-1996\n\n                                                   CAPÍTULO II\n                               Acceso ilícito a sistemas y equipos de informática\n                                                                                                  Capítulo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 1.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática protegidos por algún mecanismo de seguridad, se le\nimpondrán de seis meses a dos años de prisión y de cien a trescientos días multa.\n\n   Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nprotegidos por algún mecanismo de seguridad, se le impondrán de tres meses a un año de prisión y de\ncincuenta a ciento cincuenta días multa.\n                                                                                                  Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 2.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática del Estado, protegidos por algún mecanismo de\nseguridad, se le impondrán de uno a cuatro años de prisión y de doscientos a seiscientos días multa.\n\n    Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\ndel Estado, protegidos por algún mecanismo de seguridad, se le impondrán de seis meses a dos años de\nprisión y de cien a trescientos días multa.\n\n   A quien sin autorización conozca, obtenga, copie o utilice información contenida en cualquier sistema,\nequipo o medio de almacenamiento informáticos de seguridad pública, protegido por algún medio de\nseguridad, se le impondrá pena de cuatro a diez años de prisión y multa de quinientos a mil días de\nsalario mínimo general vigente en el Distrito Federal. Si el responsable es o hubiera sido servidor público\n\n\n\n                                                               70 de 353"
+        },
+        {
+          "id": "S2",
+          "filename": "CPF.pdf",
+          "score": 0.9126370835673602,
+          "text": "CÓDIGO PENAL FEDERAL\n             CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                        Última Reforma DOF 13-03-2026\n             Secretaría General\n             Secretaría de Servicios Parlamentarios\n\n\n\n\nen una institución de seguridad pública, se impondrá además, destitución e inhabilitación de cuatro a diez\naños para desempeñarse en otro empleo, puesto, cargo o comisión pública.\n                                                                                Párrafo adicionado DOF 24-06-2009\n\n   Las sanciones anteriores se duplicarán cuando la conducta obstruya, entorpezca, obstaculice, limite o\nimposibilite la procuración o impartición de justicia, o recaiga sobre los registros relacionados con un\nprocedimiento penal resguardados por las autoridades competentes.\n                                                                               Párrafo adicionado DOF 17-06-2016\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 3.- Al que estando autorizado para acceder a sistemas y equipos de informática del\nEstado, indebidamente modifique, destruya o provoque pérdida de información que contengan, se le\nimpondrán de dos a ocho años de prisión y de trescientos a novecientos días multa.\n\n   Al que estando autorizado para acceder a sistemas y equipos de informática del Estado,\nindebidamente copie información que contengan, se le impondrán de uno a cuatro años de prisión y de\nciento cincuenta a cuatrocientos cincuenta días multa.\n\n    A quien estando autorizado para acceder a sistemas, equipos o medios de almacenamiento\ninformáticos en materia de seguridad pública, indebidamente obtenga, copie o utilice información que\ncontengan, se le impondrá pena de cuatro a diez años de prisión y multa de quinientos a mil días de\nsalario mínimo general vigente en el Distrito Federal. Si el responsable es o hubiera sido servidor público\nen una institución de seguridad pública, se impondrá además, hasta una mitad más de la pena impuesta,\ndestitución e inhabilitación por un plazo igual al de la pena resultante para desempeñarse en otro empleo,\npuesto, cargo o comisión pública.\n                                                                               Párrafo adicionado DOF 24-06-2009\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 4.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática de las instituciones que integran el sistema financiero,\nprotegidos por algún mecanismo de seguridad, se le impondrán de seis meses a cuatro años de prisión y\nde cien a seiscientos días multa.\n\n    Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nde las instituciones que integran el sistema financiero, protegidos por algún mecanismo de seguridad, se\nle impondrán de tres meses a dos años de prisión y de cincuenta a trescientos días multa.\n                                                                               Artículo adicionado DOF 17-05-1999"
+        },
+        {
+          "id": "S3",
+          "filename": "CPF.pdf",
+          "score": 0.9025027577608894,
+          "text": "A quien estando autorizado para acceder a sistemas, equipos o medios de almacenamiento\ninformáticos en materia de seguridad pública, indebidamente obtenga, copie o utilice información que\ncontengan, se le impondrá pena de cuatro a diez años de prisión y multa de quinientos a mil días de\nsalario mínimo general vigente en el Distrito Federal. Si el responsable es o hubiera sido servidor público\nen una institución de seguridad pública, se impondrá además, hasta una mitad más de la pena impuesta,\ndestitución e inhabilitación por un plazo igual al de la pena resultante para desempeñarse en otro empleo,\npuesto, cargo o comisión pública.\n                                                                               Párrafo adicionado DOF 24-06-2009\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 4.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática de las instituciones que integran el sistema financiero,\nprotegidos por algún mecanismo de seguridad, se le impondrán de seis meses a cuatro años de prisión y\nde cien a seiscientos días multa.\n\n    Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nde las instituciones que integran el sistema financiero, protegidos por algún mecanismo de seguridad, se\nle impondrán de tres meses a dos años de prisión y de cincuenta a trescientos días multa.\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 5.- Al que estando autorizado para acceder a sistemas y equipos de informática de\nlas instituciones que integran el sistema financiero, indebidamente modifique, destruya o provoque\npérdida de información que contengan, se le impondrán de seis meses a cuatro años de prisión y de cien\na seiscientos días multa.\n\n    Al que estando autorizado para acceder a sistemas y equipos de informática de las instituciones que\nintegran el sistema financiero, indebidamente copie información que contengan, se le impondrán de tres\nmeses a dos años de prisión y de cincuenta a trescientos días multa.\n\n  Las penas previstas en este artículo se incrementarán en una mitad cuando las conductas sean\ncometidas por funcionarios o empleados de las instituciones que integran el sistema financiero.\n                                                                               Artículo adicionado DOF 17-05-1999\n\n    Artículo 211 bis 6.- Para los efectos de los artículos 211 Bis 4 y 211 Bis 5 anteriores, se entiende por\ninstituciones que integran el sistema financiero, las señaladas en el artículo 400 Bis de este Código.\n                                                                               Artículo adicionado DOF 17-05-1999\n\n\n\n\n                                                               71 de 353"
+        },
+        {
+          "id": "S4",
+          "filename": "CPF.pdf",
+          "score": 0.8826447802876128,
+          "text": "CÓDIGO PENAL FEDERAL\n             CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                           Última Reforma DOF 13-03-2026\n             Secretaría General\n             Secretaría de Servicios Parlamentarios\n\n\n\n\n   Para la determinación del daño ocasionado al libre desarrollo de la personalidad de la víctima y su\nreparación, se observará lo dispuesto en el artículo 209 Ter.\n                                                                                                  Artículo adicionado DOF 07-06-2024\n\n                                    TITULO NOVENO\n        Revelación de secretos y acceso ilícito a sistemas y equipos de informática\n           Título recorrido DOF 20-01-1967. Recorrido (antes Título Décimo) DOF 29-07-1970. Denominación reformada DOF 17-05-1999\n\n\n                                                           CAPITULO I\n                                                      Revelación de secretos\n                                                                                                  Capítulo adicionado DOF 17-05-1999\n\n   Artículo 210.- Se impondrán de treinta a doscientas jornadas de trabajo en favor de la comunidad, al\nque sin justa causa, con perjuicio de alguien y sin consentimiento del que pueda resultar perjudicado,\nrevele algún secreto o comunicación reservada que conoce o ha recibido con motivo de su empleo, cargo\no puesto.\n                                                                   Fe de erratas al artículo DOF 31-08-1931. Reformado DOF 10-01-1994\n\n   Artículo 211.- La sanción será de uno a cinco años, multa de cincuenta a quinientos pesos y\nsuspensión de profesión en su caso, de dos meses a un año, cuando la revelación punible sea hecha por\npersona que presta servicios profesionales o técnicos o por funcionario o empleado público o cuando el\nsecreto revelado o publicado sea de carácter industrial.\n\n   Artículo 211 Bis.- A quien revele, divulgue o utilice indebidamente o en perjuicio de otro, información\no imágenes obtenidas en una intervención de comunicación privada, se le aplicarán sanciones de seis a\ndoce años de prisión y de trescientos a seiscientos días multa.\n                                                                                                  Artículo adicionado DOF 07-11-1996\n\n                                                   CAPÍTULO II\n                               Acceso ilícito a sistemas y equipos de informática\n                                                                                                  Capítulo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 1.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática protegidos por algún mecanismo de seguridad, se le\nimpondrán de seis meses a dos años de prisión y de cien a trescientos días multa.\n\n   Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nprotegidos por algún mecanismo de seguridad, se le impondrán de tres meses a un año de prisión y de\ncincuenta a ciento cincuenta días multa.\n                                                                                                  Artículo adicionado DOF 17-05-1999"
+        },
+        {
+          "id": "S5",
+          "filename": "CPF.pdf",
+          "score": 0.6426013079684686,
+          "text": "México, D.F., a 30 de abril de 2009.- Dip. Cesar Horacio Duarte Jaquez, Presidente.- Sen. Gustavo\nEnrique Madero Muñoz, Presidente.- Dip. Maria Eugenia Jimenez Valenzuela, Secretaria.- Sen.\nGabino Cue Monteagudo, Secretario.- Rúbricas.\"\n\n   En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los\nEstados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la\nResidencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a veintiséis de mayo de\n\n\n\n                                                               256 de 353\n                                                                           CÓDIGO PENAL FEDERAL\n            CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                Última Reforma DOF 13-03-2026\n            Secretaría General\n            Secretaría de Servicios Parlamentarios\n\n\n\n\ndos mil nueve.- Felipe de Jesús Calderón Hinojosa.- Rúbrica.- El Secretario de Gobernación, Lic.\nFernando Francisco Gómez Mont Urueta.- Rúbrica.\n\n\n\n\n                                                              257 de 353\n                                                                                                            CÓDIGO PENAL FEDERAL\n              CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                               Última Reforma DOF 13-03-2026\n              Secretaría General\n              Secretaría de Servicios Parlamentarios\n\n\n\n\nDECRETO por el que se adicionan diversas disposiciones al Código Penal Federal.\n                                   Publicado en el Diario Oficial de la Federación el 24 de junio de 2009\n\n    Artículo Único. Se adicionan un párrafo tercero al artículo 211 bis 2; un párrafo tercero al artículo 211\nbis 3; un párrafo último al artículo 223; y los artículos 250 bis y 250 bis 1, todos del Código Penal Federal;\npara quedar como sigue:\n\n   ……….\n\n                                                                TRANSITORIO\n\n    Único.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de\nla Federación.\n\n  México, D.F., a 11 de diciembre de 2008.- Dip. Cesar Horacio Duarte Jaquez, Presidente.- Sen.\nGustavo Enrique Madero Muñoz, Presidente.- Dip. Manuel Portilla Dieguez, Secretario.- Sen. Gabino\nCué Monteagudo, Secretario.- Rúbricas.\"\n\n   En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los\nEstados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la\nResidencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a veintisiete de marzo\nde dos mil nueve.- Felipe de Jesús Calderón Hinojosa.- Rúbrica.- El Secretario de Gobernación, Lic.\nFernando Francisco Gómez Mont Urueta.- Rúbrica."
+        },
+        {
+          "id": "S6",
+          "filename": "CPF.pdf",
+          "score": 0.6357025563234856,
+          "text": "primer y último párrafos; 35, cuarto párrafo; 38; 40; 50 Bis, primer\npárrafo; 55, primero y tercer párrafos; 56; 64; 65, segundo párrafo; 71, segundo párrafo; 74, primer\npárrafo; 75; 76; 77; 87; la denominación del Título Quinto, Capítulo I del Libro Primero; 91; 93, cuarto\npárrafo; 97, primer párrafo; 99; 101, segundo y tercer párrafos; 110, primer y tercer párrafos; 114; 115,\nprimer párrafo; la denominación del Capítulo VIII del Título Quinto del Libro Primero; 225, fracciones IX,\nX, XII, XIV, XVI, XVII, XIX, XXI, XXVII, XXVIII, XXX, XXXI y XXXII; se adicionan los artículos 11 Bis; un\nsegundo párrafo al artículo 55, recorriéndose en su orden los subsecuentes; un cuarto párrafo al artículo\n211 Bis 2; se derogan el quinto párrafo del artículo 35; el cuarto y sexto párrafos del artículo 55; el\nartículo 90 Bis y las fracciones XI y XIII del artículo 225, del Código Penal Federal, para quedar como\nsigue:\n\n   ………\n\n                                                               Transitorios\n\n    Primero.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de\nla Federación salvo lo previsto en el siguiente artículo.\n\n    Segundo.- Las reformas al Código Nacional de Procedimientos Penales, al Código Penal Federal, a la\nLey General para Prevenir y Sancionar los Delitos en Materia de Secuestro, Reglamentaria de la fracción\nXXI del artículo 73 de la Constitución Política de los Estados Unidos Mexicanos, los artículos 2, 13, 44 y\n49 de la Ley Federal para la Protección a Personas que Intervienen en el Procedimiento Penal y los\nartículos 21 en su fracción X, 50 Bis y 158 de la Ley Orgánica del Poder Judicial de la Federación,\nentrarán en vigor en términos de lo previsto por el Artículo Segundo Transitorio del Decreto por el que se\nexpide el Código Nacional de Procedimientos Penales publicado en el Diario Oficial de la Federación el 5\nde marzo de 2014.\n\n   Los procedimientos que se encuentren en trámite, relacionados con las modificaciones a los preceptos\nlegales contemplados en el presente Decreto, se resolverán de conformidad con las disposiciones que les\ndieron origen.\n\n   Tercero.- Dentro de los 180 días naturales a la entrada en vigor del presente Decreto, la Federación y\nlas entidades federativas en el ámbito de sus respectivas competencias, deberán contar con una\nAutoridad de Supervisión de Medidas Cautelares y de la Suspensión Condicional del Proceso."
+        },
+        {
+          "id": "S7",
+          "filename": "CPF.pdf",
+          "score": 0.6231562664928091,
+          "text": ".........\n\n                                                             TRANSITORIOS\n\n   PRIMERO.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial\nde la Federación.\n\n    SEGUNDO.- A las personas que a la fecha de entrada en vigor del presente Decreto se encuentren\nsujetas a proceso penal por alguno de los delitos contenidos en las disposiciones del Código Penal para\nel Distrito Federal en Materia de Fuero Común y para toda la República en Materia de Fuero Federal,\nmencionadas en el Artículo Primero de este Decreto, le serán aplicables las disposiciones de dichos\nartículos vigentes al momento de la comisión del delito.\n\n    Los procedimientos penales y de amparo no concluidos en la fecha señalada en el transitorio anterior,\nseguirán tramitándose conforme a las disposiciones del Código Federal de Procedimientos Penales y de\nla Ley de Amparo vigentes con anterioridad a la fecha de entrada en vigor del presente Decreto.\n\n   TERCERO.- La resoluciones de la autoridad judicial en las que se hubiere prorrogado el arraigo\ndomiciliario decretado originalmente seguirán subsistiendo por todo el término que se hubiere señalado\nen la prórroga.\n\n  México, D.F., a 2 de diciembre de 1998.- Sen. José Ramírez Gamero, Presidente.- Dip. Salvador\nSánchez Vázquez, Presidente.- Sen. Gabriel Covarrubias Ibarra, Secretario.- Dip. Horacio Veloz\nMuñoz, Secretario.- Rúbricas.\"\n\n   En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los\nEstados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la\nresidencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a los veintinueve días\ndel mes de enero de mil novecientos noventa y nueve.- Ernesto Zedillo Ponce de León.- Rúbrica.- El\nSecretario de Gobernación, Francisco Labastida Ochoa.- Rúbrica.\n\n\n\n\n                                                                 229 de 353\n                                                                                                             CÓDIGO PENAL FEDERAL\n                CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                              Última Reforma DOF 13-03-2026\n                Secretaría General\n                Secretaría de Servicios Parlamentarios\n\n\n\n\nDECRETO por el que se reforman diversas disposiciones en materia penal.\n                                     Publicado en el Diario Oficial de la Federación el 17 de mayo de 1999\n\n     ARTICULO PRIMERO.- Se reforman, adicionan y derogan los artículos 25; 40; 64, párrafos primero y\nsegundo; 65, párrafo tercero; 70, párrafo último; 85; 86; 90, fracción I incisos b), c) y d); 167, párrafo\nprimero y fracciones II y VI; 168 Bis; la denominación del Título Noveno del Libro Segundo; la\ndenominación del Capítulo Unico del Título Noveno del Libro Segundo; el Capítulo II del Título Noveno\ndel Libro Segundo; 211 Bis 1; 211 Bis 2; 211 Bis 3;"
+        },
+        {
+          "id": "S8",
+          "filename": "CPF.pdf",
+          "score": 0.5800985651069154,
+          "text": "229 de 353\n                                                                                                             CÓDIGO PENAL FEDERAL\n                CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                              Última Reforma DOF 13-03-2026\n                Secretaría General\n                Secretaría de Servicios Parlamentarios\n\n\n\n\nDECRETO por el que se reforman diversas disposiciones en materia penal.\n                                     Publicado en el Diario Oficial de la Federación el 17 de mayo de 1999\n\n     ARTICULO PRIMERO.- Se reforman, adicionan y derogan los artículos 25; 40; 64, párrafos primero y\nsegundo; 65, párrafo tercero; 70, párrafo último; 85; 86; 90, fracción I incisos b), c) y d); 167, párrafo\nprimero y fracciones II y VI; 168 Bis; la denominación del Título Noveno del Libro Segundo; la\ndenominación del Capítulo Unico del Título Noveno del Libro Segundo; el Capítulo II del Título Noveno\ndel Libro Segundo; 211 Bis 1; 211 Bis 2; 211 Bis 3; 211 Bis 4; 211 Bis 5; 211 Bis 6; 211 Bis 7; el Capítulo\nXI al Título Décimo del Libro Segundo; 222 Bis; 225, fracciones XXVII, XXVIII y los tres párrafos últimos;\n253, fracción I inciso j); 254, fracción VII; 298; 307; 320; 366, fracciones I, II y párrafo último; 368,\nfracciones II y III; 368 Quáter; 376 Bis; 378; 381, primero y dos últimos párrafos; 381 Bis; 424, fracciones\nIII y IV; 424 Bis, y 424 Ter, todos del Código Penal para el Distrito Federal en Materia de Fuero Común y\npara toda la República en Materia de Fuero Federal, para quedar como sigue:\n\n   ..........\n\n                                                              TRANSITORIOS\n\n   PRIMERO.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial\nde la Federación.\n\n    SEGUNDO.- A las personas que hayan cometido un delito de los contemplados en el presente\nDecreto con anterioridad a su entrada en vigor, incluidas las procesadas o sentenciadas, les serán\naplicadas las disposiciones del Código Penal para el Distrito Federal en Materia de Fuero Común y para\ntoda la República en Materia de Fuero Federal y de la Ley de la Propiedad Industrial vigentes en el\nmomento en que se haya cometido.\n\n    TERCERO.- Las referencias que otras disposiciones hagan al artículo 194 del Código Federal de\nProcedimientos Penales respecto de la detención de personas en casos urgentes, se entenderán hechas\nal artículo 193 bis del mismo ordenamiento."
+        }
+      ]
+    },
+    {
+      "id": "CPF-AUTHORIZED-211BIS3",
+      "file": "CPF.pdf",
+      "question": "Conforme exclusivamente al Código Penal Federal del Vector Store, un usuario que sí está autorizado para acceder a sistemas informáticos del Estado copia indebidamente información. ¿Qué artículo contempla ese supuesto? Da el número completo y explica brevemente por qué la autorización importa, comparándolo solo con el artículo del supuesto sin autorización si el fragmento lo respalda.",
+      "checklist": "Debe identificar artículo 211 bis 3 para conducta indebida con acceso autorizado y distinguirlo del supuesto sin autorización del 211 bis 2.",
+      "expectedArticleReferences": [
+        "211 bis 3"
+      ],
+      "allowedAdditionalArticleReferences": [
+        "211 bis 2"
+      ],
+      "expectedStatus": null,
+      "retrieval": {
+        "totalResults": 15,
+        "matchingFileResults": 8,
+        "selectedEvidenceChunks": 8,
+        "scores": [
+          0.9710400473921896,
+          0.8907495080890994,
+          0.8895973555967273,
+          0.8169337015694049,
+          0.40542028160175897,
+          0.3642355206187396,
+          0.3503675814474092,
+          0.34698618304422163
+        ]
+      },
+      "answer": "Texto expreso: El artículo que contempla el supuesto de un usuario autorizado que copia indebidamente información es el Artículo 211 bis 3. [S1]\nExtracto verificado: “Artículo 211 bis 3.- Al que estando autorizado para acceder a sistemas y equipos de informática del Estado, indebidamente copie información que contengan, se le impondrán de uno a cuatro años de prisión y de ciento cincuenta a cuatrocientos cincuenta días multa.”\n\nTexto expreso: La autorización es crucial ya que la pena por copiar información sin autorización, según el Artículo 211 bis 1, es significativamente mayor. [S4]\nExtracto verificado: “Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática, se le impondrán de tres meses a un año de prisión y de cincuenta a ciento cincuenta días multa.”",
+      "evaluation": {
+        "status": "respondido",
+        "articleReferencesInAnswer": [
+          "211 bis 3",
+          "211 bis 1"
+        ],
+        "expectedArticleReferences": [
+          "211 bis 3"
+        ],
+        "missingExpectedArticleReferences": [],
+        "allowedAdditionalArticleReferences": [
+          "211 bis 2"
+        ],
+        "unapprovedAdditionalArticleReferences": [
+          "211 bis 1"
+        ],
+        "missingConceptGroups": [],
+        "forbiddenClaims": [],
+        "groundingErrors": [
+          "Afirmación 1: el extracto no coincide literalmente con S1.",
+          "Afirmación 2: el extracto no coincide literalmente con S4.",
+          "Afirmación 2: el extracto no muestra el encabezado del artículo 211 bis 1."
+        ],
+        "sourceIds": [
+          "S1",
+          "S4"
+        ],
+        "checks": {
+          "quoteIntegrity": false,
+          "articleAccuracy": true,
+          "articleScope": false,
+          "contentHeuristics": true,
+          "responseStatus": true,
+          "retrieval": true,
+          "overall": false
+        },
+        "overall": false
+      },
+      "error": null,
+      "structuredAnswer": {
+        "status": "respondido",
+        "claims": [
+          {
+            "statement": "El artículo que contempla el supuesto de un usuario autorizado que copia indebidamente información es el Artículo 211 bis 3.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "Artículo 211 bis 3.- Al que estando autorizado para acceder a sistemas y equipos de informática del Estado, indebidamente copie información que contengan, se le impondrán de uno a cuatro años de prisión y de ciento cincuenta a cuatrocientos cincuenta días multa.",
+            "article_references": [
+              "211 bis 3"
+            ]
+          },
+          {
+            "statement": "La autorización es crucial ya que la pena por copiar información sin autorización, según el Artículo 211 bis 1, es significativamente mayor.",
+            "category": "texto_expreso",
+            "source_id": "S4",
+            "quote": "Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática, se le impondrán de tres meses a un año de prisión y de cincuenta a ciento cincuenta días multa.",
+            "article_references": [
+              "211 bis 1"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "S1",
+          "filename": "CPF.pdf",
+          "score": 0.9710400473921896,
+          "text": "CÓDIGO PENAL FEDERAL\n             CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                        Última Reforma DOF 13-03-2026\n             Secretaría General\n             Secretaría de Servicios Parlamentarios\n\n\n\n\nen una institución de seguridad pública, se impondrá además, destitución e inhabilitación de cuatro a diez\naños para desempeñarse en otro empleo, puesto, cargo o comisión pública.\n                                                                                Párrafo adicionado DOF 24-06-2009\n\n   Las sanciones anteriores se duplicarán cuando la conducta obstruya, entorpezca, obstaculice, limite o\nimposibilite la procuración o impartición de justicia, o recaiga sobre los registros relacionados con un\nprocedimiento penal resguardados por las autoridades competentes.\n                                                                               Párrafo adicionado DOF 17-06-2016\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 3.- Al que estando autorizado para acceder a sistemas y equipos de informática del\nEstado, indebidamente modifique, destruya o provoque pérdida de información que contengan, se le\nimpondrán de dos a ocho años de prisión y de trescientos a novecientos días multa.\n\n   Al que estando autorizado para acceder a sistemas y equipos de informática del Estado,\nindebidamente copie información que contengan, se le impondrán de uno a cuatro años de prisión y de\nciento cincuenta a cuatrocientos cincuenta días multa.\n\n    A quien estando autorizado para acceder a sistemas, equipos o medios de almacenamiento\ninformáticos en materia de seguridad pública, indebidamente obtenga, copie o utilice información que\ncontengan, se le impondrá pena de cuatro a diez años de prisión y multa de quinientos a mil días de\nsalario mínimo general vigente en el Distrito Federal. Si el responsable es o hubiera sido servidor público\nen una institución de seguridad pública, se impondrá además, hasta una mitad más de la pena impuesta,\ndestitución e inhabilitación por un plazo igual al de la pena resultante para desempeñarse en otro empleo,\npuesto, cargo o comisión pública.\n                                                                               Párrafo adicionado DOF 24-06-2009\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 4.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática de las instituciones que integran el sistema financiero,\nprotegidos por algún mecanismo de seguridad, se le impondrán de seis meses a cuatro años de prisión y\nde cien a seiscientos días multa.\n\n    Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nde las instituciones que integran el sistema financiero, protegidos por algún mecanismo de seguridad, se\nle impondrán de tres meses a dos años de prisión y de cincuenta a trescientos días multa.\n                                                                               Artículo adicionado DOF 17-05-1999"
+        },
+        {
+          "id": "S2",
+          "filename": "CPF.pdf",
+          "score": 0.8907495080890994,
+          "text": "Artículo 211.- La sanción será de uno a cinco años, multa de cincuenta a quinientos pesos y\nsuspensión de profesión en su caso, de dos meses a un año, cuando la revelación punible sea hecha por\npersona que presta servicios profesionales o técnicos o por funcionario o empleado público o cuando el\nsecreto revelado o publicado sea de carácter industrial.\n\n   Artículo 211 Bis.- A quien revele, divulgue o utilice indebidamente o en perjuicio de otro, información\no imágenes obtenidas en una intervención de comunicación privada, se le aplicarán sanciones de seis a\ndoce años de prisión y de trescientos a seiscientos días multa.\n                                                                                                  Artículo adicionado DOF 07-11-1996\n\n                                                   CAPÍTULO II\n                               Acceso ilícito a sistemas y equipos de informática\n                                                                                                  Capítulo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 1.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática protegidos por algún mecanismo de seguridad, se le\nimpondrán de seis meses a dos años de prisión y de cien a trescientos días multa.\n\n   Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nprotegidos por algún mecanismo de seguridad, se le impondrán de tres meses a un año de prisión y de\ncincuenta a ciento cincuenta días multa.\n                                                                                                  Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 2.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática del Estado, protegidos por algún mecanismo de\nseguridad, se le impondrán de uno a cuatro años de prisión y de doscientos a seiscientos días multa.\n\n    Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\ndel Estado, protegidos por algún mecanismo de seguridad, se le impondrán de seis meses a dos años de\nprisión y de cien a trescientos días multa.\n\n   A quien sin autorización conozca, obtenga, copie o utilice información contenida en cualquier sistema,\nequipo o medio de almacenamiento informáticos de seguridad pública, protegido por algún medio de\nseguridad, se le impondrá pena de cuatro a diez años de prisión y multa de quinientos a mil días de\nsalario mínimo general vigente en el Distrito Federal. Si el responsable es o hubiera sido servidor público\n\n\n\n                                                               70 de 353"
+        },
+        {
+          "id": "S3",
+          "filename": "CPF.pdf",
+          "score": 0.8895973555967273,
+          "text": "A quien estando autorizado para acceder a sistemas, equipos o medios de almacenamiento\ninformáticos en materia de seguridad pública, indebidamente obtenga, copie o utilice información que\ncontengan, se le impondrá pena de cuatro a diez años de prisión y multa de quinientos a mil días de\nsalario mínimo general vigente en el Distrito Federal. Si el responsable es o hubiera sido servidor público\nen una institución de seguridad pública, se impondrá además, hasta una mitad más de la pena impuesta,\ndestitución e inhabilitación por un plazo igual al de la pena resultante para desempeñarse en otro empleo,\npuesto, cargo o comisión pública.\n                                                                               Párrafo adicionado DOF 24-06-2009\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 4.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática de las instituciones que integran el sistema financiero,\nprotegidos por algún mecanismo de seguridad, se le impondrán de seis meses a cuatro años de prisión y\nde cien a seiscientos días multa.\n\n    Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nde las instituciones que integran el sistema financiero, protegidos por algún mecanismo de seguridad, se\nle impondrán de tres meses a dos años de prisión y de cincuenta a trescientos días multa.\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 5.- Al que estando autorizado para acceder a sistemas y equipos de informática de\nlas instituciones que integran el sistema financiero, indebidamente modifique, destruya o provoque\npérdida de información que contengan, se le impondrán de seis meses a cuatro años de prisión y de cien\na seiscientos días multa.\n\n    Al que estando autorizado para acceder a sistemas y equipos de informática de las instituciones que\nintegran el sistema financiero, indebidamente copie información que contengan, se le impondrán de tres\nmeses a dos años de prisión y de cincuenta a trescientos días multa.\n\n  Las penas previstas en este artículo se incrementarán en una mitad cuando las conductas sean\ncometidas por funcionarios o empleados de las instituciones que integran el sistema financiero.\n                                                                               Artículo adicionado DOF 17-05-1999\n\n    Artículo 211 bis 6.- Para los efectos de los artículos 211 Bis 4 y 211 Bis 5 anteriores, se entiende por\ninstituciones que integran el sistema financiero, las señaladas en el artículo 400 Bis de este Código.\n                                                                               Artículo adicionado DOF 17-05-1999\n\n\n\n\n                                                               71 de 353"
+        },
+        {
+          "id": "S4",
+          "filename": "CPF.pdf",
+          "score": 0.8169337015694049,
+          "text": "CÓDIGO PENAL FEDERAL\n             CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                           Última Reforma DOF 13-03-2026\n             Secretaría General\n             Secretaría de Servicios Parlamentarios\n\n\n\n\n   Para la determinación del daño ocasionado al libre desarrollo de la personalidad de la víctima y su\nreparación, se observará lo dispuesto en el artículo 209 Ter.\n                                                                                                  Artículo adicionado DOF 07-06-2024\n\n                                    TITULO NOVENO\n        Revelación de secretos y acceso ilícito a sistemas y equipos de informática\n           Título recorrido DOF 20-01-1967. Recorrido (antes Título Décimo) DOF 29-07-1970. Denominación reformada DOF 17-05-1999\n\n\n                                                           CAPITULO I\n                                                      Revelación de secretos\n                                                                                                  Capítulo adicionado DOF 17-05-1999\n\n   Artículo 210.- Se impondrán de treinta a doscientas jornadas de trabajo en favor de la comunidad, al\nque sin justa causa, con perjuicio de alguien y sin consentimiento del que pueda resultar perjudicado,\nrevele algún secreto o comunicación reservada que conoce o ha recibido con motivo de su empleo, cargo\no puesto.\n                                                                   Fe de erratas al artículo DOF 31-08-1931. Reformado DOF 10-01-1994\n\n   Artículo 211.- La sanción será de uno a cinco años, multa de cincuenta a quinientos pesos y\nsuspensión de profesión en su caso, de dos meses a un año, cuando la revelación punible sea hecha por\npersona que presta servicios profesionales o técnicos o por funcionario o empleado público o cuando el\nsecreto revelado o publicado sea de carácter industrial.\n\n   Artículo 211 Bis.- A quien revele, divulgue o utilice indebidamente o en perjuicio de otro, información\no imágenes obtenidas en una intervención de comunicación privada, se le aplicarán sanciones de seis a\ndoce años de prisión y de trescientos a seiscientos días multa.\n                                                                                                  Artículo adicionado DOF 07-11-1996\n\n                                                   CAPÍTULO II\n                               Acceso ilícito a sistemas y equipos de informática\n                                                                                                  Capítulo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 1.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática protegidos por algún mecanismo de seguridad, se le\nimpondrán de seis meses a dos años de prisión y de cien a trescientos días multa.\n\n   Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nprotegidos por algún mecanismo de seguridad, se le impondrán de tres meses a un año de prisión y de\ncincuenta a ciento cincuenta días multa.\n                                                                                                  Artículo adicionado DOF 17-05-1999"
+        },
+        {
+          "id": "S5",
+          "filename": "CPF.pdf",
+          "score": 0.40542028160175897,
+          "text": "México, D.F., a 30 de abril de 2009.- Dip. Cesar Horacio Duarte Jaquez, Presidente.- Sen. Gustavo\nEnrique Madero Muñoz, Presidente.- Dip. Maria Eugenia Jimenez Valenzuela, Secretaria.- Sen.\nGabino Cue Monteagudo, Secretario.- Rúbricas.\"\n\n   En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los\nEstados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la\nResidencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a veintiséis de mayo de\n\n\n\n                                                               256 de 353\n                                                                           CÓDIGO PENAL FEDERAL\n            CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                Última Reforma DOF 13-03-2026\n            Secretaría General\n            Secretaría de Servicios Parlamentarios\n\n\n\n\ndos mil nueve.- Felipe de Jesús Calderón Hinojosa.- Rúbrica.- El Secretario de Gobernación, Lic.\nFernando Francisco Gómez Mont Urueta.- Rúbrica.\n\n\n\n\n                                                              257 de 353\n                                                                                                            CÓDIGO PENAL FEDERAL\n              CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                               Última Reforma DOF 13-03-2026\n              Secretaría General\n              Secretaría de Servicios Parlamentarios\n\n\n\n\nDECRETO por el que se adicionan diversas disposiciones al Código Penal Federal.\n                                   Publicado en el Diario Oficial de la Federación el 24 de junio de 2009\n\n    Artículo Único. Se adicionan un párrafo tercero al artículo 211 bis 2; un párrafo tercero al artículo 211\nbis 3; un párrafo último al artículo 223; y los artículos 250 bis y 250 bis 1, todos del Código Penal Federal;\npara quedar como sigue:\n\n   ……….\n\n                                                                TRANSITORIO\n\n    Único.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de\nla Federación.\n\n  México, D.F., a 11 de diciembre de 2008.- Dip. Cesar Horacio Duarte Jaquez, Presidente.- Sen.\nGustavo Enrique Madero Muñoz, Presidente.- Dip. Manuel Portilla Dieguez, Secretario.- Sen. Gabino\nCué Monteagudo, Secretario.- Rúbricas.\"\n\n   En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los\nEstados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la\nResidencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a veintisiete de marzo\nde dos mil nueve.- Felipe de Jesús Calderón Hinojosa.- Rúbrica.- El Secretario de Gobernación, Lic.\nFernando Francisco Gómez Mont Urueta.- Rúbrica."
+        },
+        {
+          "id": "S6",
+          "filename": "CPF.pdf",
+          "score": 0.3642355206187396,
+          "text": "229 de 353\n                                                                                                             CÓDIGO PENAL FEDERAL\n                CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                              Última Reforma DOF 13-03-2026\n                Secretaría General\n                Secretaría de Servicios Parlamentarios\n\n\n\n\nDECRETO por el que se reforman diversas disposiciones en materia penal.\n                                     Publicado en el Diario Oficial de la Federación el 17 de mayo de 1999\n\n     ARTICULO PRIMERO.- Se reforman, adicionan y derogan los artículos 25; 40; 64, párrafos primero y\nsegundo; 65, párrafo tercero; 70, párrafo último; 85; 86; 90, fracción I incisos b), c) y d); 167, párrafo\nprimero y fracciones II y VI; 168 Bis; la denominación del Título Noveno del Libro Segundo; la\ndenominación del Capítulo Unico del Título Noveno del Libro Segundo; el Capítulo II del Título Noveno\ndel Libro Segundo; 211 Bis 1; 211 Bis 2; 211 Bis 3; 211 Bis 4; 211 Bis 5; 211 Bis 6; 211 Bis 7; el Capítulo\nXI al Título Décimo del Libro Segundo; 222 Bis; 225, fracciones XXVII, XXVIII y los tres párrafos últimos;\n253, fracción I inciso j); 254, fracción VII; 298; 307; 320; 366, fracciones I, II y párrafo último; 368,\nfracciones II y III; 368 Quáter; 376 Bis; 378; 381, primero y dos últimos párrafos; 381 Bis; 424, fracciones\nIII y IV; 424 Bis, y 424 Ter, todos del Código Penal para el Distrito Federal en Materia de Fuero Común y\npara toda la República en Materia de Fuero Federal, para quedar como sigue:\n\n   ..........\n\n                                                              TRANSITORIOS\n\n   PRIMERO.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial\nde la Federación.\n\n    SEGUNDO.- A las personas que hayan cometido un delito de los contemplados en el presente\nDecreto con anterioridad a su entrada en vigor, incluidas las procesadas o sentenciadas, les serán\naplicadas las disposiciones del Código Penal para el Distrito Federal en Materia de Fuero Común y para\ntoda la República en Materia de Fuero Federal y de la Ley de la Propiedad Industrial vigentes en el\nmomento en que se haya cometido.\n\n    TERCERO.- Las referencias que otras disposiciones hagan al artículo 194 del Código Federal de\nProcedimientos Penales respecto de la detención de personas en casos urgentes, se entenderán hechas\nal artículo 193 bis del mismo ordenamiento."
+        },
+        {
+          "id": "S7",
+          "filename": "CPF.pdf",
+          "score": 0.3503675814474092,
+          "text": "primer y último párrafos; 35, cuarto párrafo; 38; 40; 50 Bis, primer\npárrafo; 55, primero y tercer párrafos; 56; 64; 65, segundo párrafo; 71, segundo párrafo; 74, primer\npárrafo; 75; 76; 77; 87; la denominación del Título Quinto, Capítulo I del Libro Primero; 91; 93, cuarto\npárrafo; 97, primer párrafo; 99; 101, segundo y tercer párrafos; 110, primer y tercer párrafos; 114; 115,\nprimer párrafo; la denominación del Capítulo VIII del Título Quinto del Libro Primero; 225, fracciones IX,\nX, XII, XIV, XVI, XVII, XIX, XXI, XXVII, XXVIII, XXX, XXXI y XXXII; se adicionan los artículos 11 Bis; un\nsegundo párrafo al artículo 55, recorriéndose en su orden los subsecuentes; un cuarto párrafo al artículo\n211 Bis 2; se derogan el quinto párrafo del artículo 35; el cuarto y sexto párrafos del artículo 55; el\nartículo 90 Bis y las fracciones XI y XIII del artículo 225, del Código Penal Federal, para quedar como\nsigue:\n\n   ………\n\n                                                               Transitorios\n\n    Primero.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de\nla Federación salvo lo previsto en el siguiente artículo.\n\n    Segundo.- Las reformas al Código Nacional de Procedimientos Penales, al Código Penal Federal, a la\nLey General para Prevenir y Sancionar los Delitos en Materia de Secuestro, Reglamentaria de la fracción\nXXI del artículo 73 de la Constitución Política de los Estados Unidos Mexicanos, los artículos 2, 13, 44 y\n49 de la Ley Federal para la Protección a Personas que Intervienen en el Procedimiento Penal y los\nartículos 21 en su fracción X, 50 Bis y 158 de la Ley Orgánica del Poder Judicial de la Federación,\nentrarán en vigor en términos de lo previsto por el Artículo Segundo Transitorio del Decreto por el que se\nexpide el Código Nacional de Procedimientos Penales publicado en el Diario Oficial de la Federación el 5\nde marzo de 2014.\n\n   Los procedimientos que se encuentren en trámite, relacionados con las modificaciones a los preceptos\nlegales contemplados en el presente Decreto, se resolverán de conformidad con las disposiciones que les\ndieron origen.\n\n   Tercero.- Dentro de los 180 días naturales a la entrada en vigor del presente Decreto, la Federación y\nlas entidades federativas en el ámbito de sus respectivas competencias, deberán contar con una\nAutoridad de Supervisión de Medidas Cautelares y de la Suspensión Condicional del Proceso."
+        },
+        {
+          "id": "S8",
+          "filename": "CPF.pdf",
+          "score": 0.34698618304422163,
+          "text": ".........\n\n                                                             TRANSITORIOS\n\n   PRIMERO.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial\nde la Federación.\n\n    SEGUNDO.- A las personas que a la fecha de entrada en vigor del presente Decreto se encuentren\nsujetas a proceso penal por alguno de los delitos contenidos en las disposiciones del Código Penal para\nel Distrito Federal en Materia de Fuero Común y para toda la República en Materia de Fuero Federal,\nmencionadas en el Artículo Primero de este Decreto, le serán aplicables las disposiciones de dichos\nartículos vigentes al momento de la comisión del delito.\n\n    Los procedimientos penales y de amparo no concluidos en la fecha señalada en el transitorio anterior,\nseguirán tramitándose conforme a las disposiciones del Código Federal de Procedimientos Penales y de\nla Ley de Amparo vigentes con anterioridad a la fecha de entrada en vigor del presente Decreto.\n\n   TERCERO.- La resoluciones de la autoridad judicial en las que se hubiere prorrogado el arraigo\ndomiciliario decretado originalmente seguirán subsistiendo por todo el término que se hubiere señalado\nen la prórroga.\n\n  México, D.F., a 2 de diciembre de 1998.- Sen. José Ramírez Gamero, Presidente.- Dip. Salvador\nSánchez Vázquez, Presidente.- Sen. Gabriel Covarrubias Ibarra, Secretario.- Dip. Horacio Veloz\nMuñoz, Secretario.- Rúbricas.\"\n\n   En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los\nEstados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la\nresidencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a los veintinueve días\ndel mes de enero de mil novecientos noventa y nueve.- Ernesto Zedillo Ponce de León.- Rúbrica.- El\nSecretario de Gobernación, Francisco Labastida Ochoa.- Rúbrica.\n\n\n\n\n                                                                 229 de 353\n                                                                                                             CÓDIGO PENAL FEDERAL\n                CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                              Última Reforma DOF 13-03-2026\n                Secretaría General\n                Secretaría de Servicios Parlamentarios\n\n\n\n\nDECRETO por el que se reforman diversas disposiciones en materia penal.\n                                     Publicado en el Diario Oficial de la Federación el 17 de mayo de 1999\n\n     ARTICULO PRIMERO.- Se reforman, adicionan y derogan los artículos 25; 40; 64, párrafos primero y\nsegundo; 65, párrafo tercero; 70, párrafo último; 85; 86; 90, fracción I incisos b), c) y d); 167, párrafo\nprimero y fracciones II y VI; 168 Bis; la denominación del Título Noveno del Libro Segundo; la\ndenominación del Capítulo Unico del Título Noveno del Libro Segundo; el Capítulo II del Título Noveno\ndel Libro Segundo; 211 Bis 1; 211 Bis 2; 211 Bis 3;"
+        }
+      ]
+    },
+    {
+      "id": "CPF-AUTHORIZATION-AMBIGUOUS",
+      "file": "CPF.pdf",
+      "question": "Una persona copia indebidamente información de un sistema informático del Estado protegido por un mecanismo de seguridad, pero no sabemos si estaba autorizada para acceder. ¿Puedes seleccionar un artículo del CPF con esos datos? Explica qué hecho falta y distingue los artículos aplicables a los dos supuestos.",
+      "checklist": "Debe abstenerse de elegir un solo artículo sin conocer si existía autorización; explicar condicionalmente 211 bis 2 y 211 bis 3 con la diferencia correcta.",
+      "expectedArticleReferences": [
+        "211 bis 2",
+        "211 bis 3"
+      ],
+      "allowedAdditionalArticleReferences": [],
+      "expectedStatus": "parcial",
+      "retrieval": {
+        "totalResults": 15,
+        "matchingFileResults": 9,
+        "selectedEvidenceChunks": 8,
+        "scores": [
+          0.9415803009385825,
+          0.9401915552123131,
+          0.8398919588922911,
+          0.8221744166035424,
+          0.5196758702287396,
+          0.5082156021983626,
+          0.4936904380394947,
+          0.49284579049931415
+        ]
+      },
+      "answer": "Texto expreso: El artículo 211 bis 1 establece sanciones por conocer o copiar información contenida en sistemas informáticos protegidos por seguridad sin autorización. [S1]\nExtracto verificado: “Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática protegidos por algún mecanismo de seguridad, se le impondrán de tres meses a un año de prisión y de cincuenta a ciento cincuenta días multa.”\n\nTexto expreso: El artículo 211 bis 2 estipula sanciones específicas para el acceso no autorizado a sistemas informáticos del Estado, destacando la copia de información. [S1]\nExtracto verificado: “Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática del Estado, protegidos por algún mecanismo de seguridad, se le impondrán de seis meses a dos años de prisión y de cien a trescientos días multa.”\n\nLímite de verificación: Falta determinar si la persona estaba autorizada para acceder a la información, lo cual cambiaría la aplicabilidad de las sanciones. La acción de copiar información sin autorización se sanciona bajo los artículos 211 bis 1 y 211 bis 2, pero si existe autorización se podría aplicar lo descrito en el artículo 211 bis 3. [S1]\nExtracto verificado: “A quien estando autorizado para acceder a sistemas, equipos o medios de almacenamiento informáticos en materia de seguridad pública, indebidamente obtenga, copie o utilice información que contengan, se le impondrá pena de cuatro a diez años de prisión.”\n\nLos fragmentos no permiten resolver el resto de la pregunta; hace falta consultar la fuente o dato aplicable.",
+      "evaluation": {
+        "status": "parcial",
+        "articleReferencesInAnswer": [
+          "211 bis 1",
+          "211 bis 2",
+          "211 bis 3"
+        ],
+        "expectedArticleReferences": [
+          "211 bis 2",
+          "211 bis 3"
+        ],
+        "missingExpectedArticleReferences": [],
+        "allowedAdditionalArticleReferences": [],
+        "unapprovedAdditionalArticleReferences": [
+          "211 bis 1"
+        ],
+        "missingConceptGroups": [
+          [
+            "depende",
+            "si estaba",
+            "si tenía",
+            "si tenía autorización",
+            "falta saber"
+          ]
+        ],
+        "forbiddenClaims": [],
+        "groundingErrors": [
+          "Afirmación 1: el extracto no muestra el encabezado del artículo 211 bis 1.",
+          "Afirmación 2: el extracto no muestra el encabezado del artículo 211 bis 2.",
+          "Afirmación 3: el extracto no coincide literalmente con S1.",
+          "Afirmación 3: referencias no declaradas (211 bis 1, 211 bis 2).",
+          "Afirmación 3: el extracto no muestra el encabezado del artículo 211 bis 1.",
+          "Afirmación 3: el extracto no muestra el encabezado del artículo 211 bis 2.",
+          "Afirmación 3: el extracto no muestra el encabezado del artículo 211 bis 3."
+        ],
+        "sourceIds": [
+          "S1"
+        ],
+        "checks": {
+          "quoteIntegrity": false,
+          "articleAccuracy": true,
+          "articleScope": false,
+          "contentHeuristics": false,
+          "responseStatus": true,
+          "retrieval": true,
+          "overall": false
+        },
+        "overall": false
+      },
+      "error": null,
+      "structuredAnswer": {
+        "status": "parcial",
+        "claims": [
+          {
+            "statement": "El artículo 211 bis 1 establece sanciones por conocer o copiar información contenida en sistemas informáticos protegidos por seguridad sin autorización.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática protegidos por algún mecanismo de seguridad, se le impondrán de tres meses a un año de prisión y de cincuenta a ciento cincuenta días multa.",
+            "article_references": [
+              "211 bis 1"
+            ]
+          },
+          {
+            "statement": "El artículo 211 bis 2 estipula sanciones específicas para el acceso no autorizado a sistemas informáticos del Estado, destacando la copia de información.",
+            "category": "texto_expreso",
+            "source_id": "S1",
+            "quote": "Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática del Estado, protegidos por algún mecanismo de seguridad, se le impondrán de seis meses a dos años de prisión y de cien a trescientos días multa.",
+            "article_references": [
+              "211 bis 2"
+            ]
+          },
+          {
+            "statement": "Falta determinar si la persona estaba autorizada para acceder a la información, lo cual cambiaría la aplicabilidad de las sanciones. La acción de copiar información sin autorización se sanciona bajo los artículos 211 bis 1 y 211 bis 2, pero si existe autorización se podría aplicar lo descrito en el artículo 211 bis 3.",
+            "category": "limite",
+            "source_id": "S1",
+            "quote": "A quien estando autorizado para acceder a sistemas, equipos o medios de almacenamiento informáticos en materia de seguridad pública, indebidamente obtenga, copie o utilice información que contengan, se le impondrá pena de cuatro a diez años de prisión.",
+            "article_references": [
+              "211 bis 3"
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "id": "S1",
+          "filename": "CPF.pdf",
+          "score": 0.9415803009385825,
+          "text": "Artículo 211.- La sanción será de uno a cinco años, multa de cincuenta a quinientos pesos y\nsuspensión de profesión en su caso, de dos meses a un año, cuando la revelación punible sea hecha por\npersona que presta servicios profesionales o técnicos o por funcionario o empleado público o cuando el\nsecreto revelado o publicado sea de carácter industrial.\n\n   Artículo 211 Bis.- A quien revele, divulgue o utilice indebidamente o en perjuicio de otro, información\no imágenes obtenidas en una intervención de comunicación privada, se le aplicarán sanciones de seis a\ndoce años de prisión y de trescientos a seiscientos días multa.\n                                                                                                  Artículo adicionado DOF 07-11-1996\n\n                                                   CAPÍTULO II\n                               Acceso ilícito a sistemas y equipos de informática\n                                                                                                  Capítulo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 1.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática protegidos por algún mecanismo de seguridad, se le\nimpondrán de seis meses a dos años de prisión y de cien a trescientos días multa.\n\n   Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nprotegidos por algún mecanismo de seguridad, se le impondrán de tres meses a un año de prisión y de\ncincuenta a ciento cincuenta días multa.\n                                                                                                  Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 2.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática del Estado, protegidos por algún mecanismo de\nseguridad, se le impondrán de uno a cuatro años de prisión y de doscientos a seiscientos días multa.\n\n    Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\ndel Estado, protegidos por algún mecanismo de seguridad, se le impondrán de seis meses a dos años de\nprisión y de cien a trescientos días multa.\n\n   A quien sin autorización conozca, obtenga, copie o utilice información contenida en cualquier sistema,\nequipo o medio de almacenamiento informáticos de seguridad pública, protegido por algún medio de\nseguridad, se le impondrá pena de cuatro a diez años de prisión y multa de quinientos a mil días de\nsalario mínimo general vigente en el Distrito Federal. Si el responsable es o hubiera sido servidor público\n\n\n\n                                                               70 de 353"
+        },
+        {
+          "id": "S2",
+          "filename": "CPF.pdf",
+          "score": 0.9401915552123131,
+          "text": "CÓDIGO PENAL FEDERAL\n             CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                        Última Reforma DOF 13-03-2026\n             Secretaría General\n             Secretaría de Servicios Parlamentarios\n\n\n\n\nen una institución de seguridad pública, se impondrá además, destitución e inhabilitación de cuatro a diez\naños para desempeñarse en otro empleo, puesto, cargo o comisión pública.\n                                                                                Párrafo adicionado DOF 24-06-2009\n\n   Las sanciones anteriores se duplicarán cuando la conducta obstruya, entorpezca, obstaculice, limite o\nimposibilite la procuración o impartición de justicia, o recaiga sobre los registros relacionados con un\nprocedimiento penal resguardados por las autoridades competentes.\n                                                                               Párrafo adicionado DOF 17-06-2016\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 3.- Al que estando autorizado para acceder a sistemas y equipos de informática del\nEstado, indebidamente modifique, destruya o provoque pérdida de información que contengan, se le\nimpondrán de dos a ocho años de prisión y de trescientos a novecientos días multa.\n\n   Al que estando autorizado para acceder a sistemas y equipos de informática del Estado,\nindebidamente copie información que contengan, se le impondrán de uno a cuatro años de prisión y de\nciento cincuenta a cuatrocientos cincuenta días multa.\n\n    A quien estando autorizado para acceder a sistemas, equipos o medios de almacenamiento\ninformáticos en materia de seguridad pública, indebidamente obtenga, copie o utilice información que\ncontengan, se le impondrá pena de cuatro a diez años de prisión y multa de quinientos a mil días de\nsalario mínimo general vigente en el Distrito Federal. Si el responsable es o hubiera sido servidor público\nen una institución de seguridad pública, se impondrá además, hasta una mitad más de la pena impuesta,\ndestitución e inhabilitación por un plazo igual al de la pena resultante para desempeñarse en otro empleo,\npuesto, cargo o comisión pública.\n                                                                               Párrafo adicionado DOF 24-06-2009\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 4.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática de las instituciones que integran el sistema financiero,\nprotegidos por algún mecanismo de seguridad, se le impondrán de seis meses a cuatro años de prisión y\nde cien a seiscientos días multa.\n\n    Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nde las instituciones que integran el sistema financiero, protegidos por algún mecanismo de seguridad, se\nle impondrán de tres meses a dos años de prisión y de cincuenta a trescientos días multa.\n                                                                               Artículo adicionado DOF 17-05-1999"
+        },
+        {
+          "id": "S3",
+          "filename": "CPF.pdf",
+          "score": 0.8398919588922911,
+          "text": "CÓDIGO PENAL FEDERAL\n             CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                           Última Reforma DOF 13-03-2026\n             Secretaría General\n             Secretaría de Servicios Parlamentarios\n\n\n\n\n   Para la determinación del daño ocasionado al libre desarrollo de la personalidad de la víctima y su\nreparación, se observará lo dispuesto en el artículo 209 Ter.\n                                                                                                  Artículo adicionado DOF 07-06-2024\n\n                                    TITULO NOVENO\n        Revelación de secretos y acceso ilícito a sistemas y equipos de informática\n           Título recorrido DOF 20-01-1967. Recorrido (antes Título Décimo) DOF 29-07-1970. Denominación reformada DOF 17-05-1999\n\n\n                                                           CAPITULO I\n                                                      Revelación de secretos\n                                                                                                  Capítulo adicionado DOF 17-05-1999\n\n   Artículo 210.- Se impondrán de treinta a doscientas jornadas de trabajo en favor de la comunidad, al\nque sin justa causa, con perjuicio de alguien y sin consentimiento del que pueda resultar perjudicado,\nrevele algún secreto o comunicación reservada que conoce o ha recibido con motivo de su empleo, cargo\no puesto.\n                                                                   Fe de erratas al artículo DOF 31-08-1931. Reformado DOF 10-01-1994\n\n   Artículo 211.- La sanción será de uno a cinco años, multa de cincuenta a quinientos pesos y\nsuspensión de profesión en su caso, de dos meses a un año, cuando la revelación punible sea hecha por\npersona que presta servicios profesionales o técnicos o por funcionario o empleado público o cuando el\nsecreto revelado o publicado sea de carácter industrial.\n\n   Artículo 211 Bis.- A quien revele, divulgue o utilice indebidamente o en perjuicio de otro, información\no imágenes obtenidas en una intervención de comunicación privada, se le aplicarán sanciones de seis a\ndoce años de prisión y de trescientos a seiscientos días multa.\n                                                                                                  Artículo adicionado DOF 07-11-1996\n\n                                                   CAPÍTULO II\n                               Acceso ilícito a sistemas y equipos de informática\n                                                                                                  Capítulo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 1.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática protegidos por algún mecanismo de seguridad, se le\nimpondrán de seis meses a dos años de prisión y de cien a trescientos días multa.\n\n   Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nprotegidos por algún mecanismo de seguridad, se le impondrán de tres meses a un año de prisión y de\ncincuenta a ciento cincuenta días multa.\n                                                                                                  Artículo adicionado DOF 17-05-1999"
+        },
+        {
+          "id": "S4",
+          "filename": "CPF.pdf",
+          "score": 0.8221744166035424,
+          "text": "A quien estando autorizado para acceder a sistemas, equipos o medios de almacenamiento\ninformáticos en materia de seguridad pública, indebidamente obtenga, copie o utilice información que\ncontengan, se le impondrá pena de cuatro a diez años de prisión y multa de quinientos a mil días de\nsalario mínimo general vigente en el Distrito Federal. Si el responsable es o hubiera sido servidor público\nen una institución de seguridad pública, se impondrá además, hasta una mitad más de la pena impuesta,\ndestitución e inhabilitación por un plazo igual al de la pena resultante para desempeñarse en otro empleo,\npuesto, cargo o comisión pública.\n                                                                               Párrafo adicionado DOF 24-06-2009\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 4.- Al que sin autorización modifique, destruya o provoque pérdida de información\ncontenida en sistemas o equipos de informática de las instituciones que integran el sistema financiero,\nprotegidos por algún mecanismo de seguridad, se le impondrán de seis meses a cuatro años de prisión y\nde cien a seiscientos días multa.\n\n    Al que sin autorización conozca o copie información contenida en sistemas o equipos de informática\nde las instituciones que integran el sistema financiero, protegidos por algún mecanismo de seguridad, se\nle impondrán de tres meses a dos años de prisión y de cincuenta a trescientos días multa.\n                                                                               Artículo adicionado DOF 17-05-1999\n\n   Artículo 211 bis 5.- Al que estando autorizado para acceder a sistemas y equipos de informática de\nlas instituciones que integran el sistema financiero, indebidamente modifique, destruya o provoque\npérdida de información que contengan, se le impondrán de seis meses a cuatro años de prisión y de cien\na seiscientos días multa.\n\n    Al que estando autorizado para acceder a sistemas y equipos de informática de las instituciones que\nintegran el sistema financiero, indebidamente copie información que contengan, se le impondrán de tres\nmeses a dos años de prisión y de cincuenta a trescientos días multa.\n\n  Las penas previstas en este artículo se incrementarán en una mitad cuando las conductas sean\ncometidas por funcionarios o empleados de las instituciones que integran el sistema financiero.\n                                                                               Artículo adicionado DOF 17-05-1999\n\n    Artículo 211 bis 6.- Para los efectos de los artículos 211 Bis 4 y 211 Bis 5 anteriores, se entiende por\ninstituciones que integran el sistema financiero, las señaladas en el artículo 400 Bis de este Código.\n                                                                               Artículo adicionado DOF 17-05-1999\n\n\n\n\n                                                               71 de 353"
+        },
+        {
+          "id": "S5",
+          "filename": "CPF.pdf",
+          "score": 0.5196758702287396,
+          "text": "229 de 353\n                                                                                                             CÓDIGO PENAL FEDERAL\n                CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                              Última Reforma DOF 13-03-2026\n                Secretaría General\n                Secretaría de Servicios Parlamentarios\n\n\n\n\nDECRETO por el que se reforman diversas disposiciones en materia penal.\n                                     Publicado en el Diario Oficial de la Federación el 17 de mayo de 1999\n\n     ARTICULO PRIMERO.- Se reforman, adicionan y derogan los artículos 25; 40; 64, párrafos primero y\nsegundo; 65, párrafo tercero; 70, párrafo último; 85; 86; 90, fracción I incisos b), c) y d); 167, párrafo\nprimero y fracciones II y VI; 168 Bis; la denominación del Título Noveno del Libro Segundo; la\ndenominación del Capítulo Unico del Título Noveno del Libro Segundo; el Capítulo II del Título Noveno\ndel Libro Segundo; 211 Bis 1; 211 Bis 2; 211 Bis 3; 211 Bis 4; 211 Bis 5; 211 Bis 6; 211 Bis 7; el Capítulo\nXI al Título Décimo del Libro Segundo; 222 Bis; 225, fracciones XXVII, XXVIII y los tres párrafos últimos;\n253, fracción I inciso j); 254, fracción VII; 298; 307; 320; 366, fracciones I, II y párrafo último; 368,\nfracciones II y III; 368 Quáter; 376 Bis; 378; 381, primero y dos últimos párrafos; 381 Bis; 424, fracciones\nIII y IV; 424 Bis, y 424 Ter, todos del Código Penal para el Distrito Federal en Materia de Fuero Común y\npara toda la República en Materia de Fuero Federal, para quedar como sigue:\n\n   ..........\n\n                                                              TRANSITORIOS\n\n   PRIMERO.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial\nde la Federación.\n\n    SEGUNDO.- A las personas que hayan cometido un delito de los contemplados en el presente\nDecreto con anterioridad a su entrada en vigor, incluidas las procesadas o sentenciadas, les serán\naplicadas las disposiciones del Código Penal para el Distrito Federal en Materia de Fuero Común y para\ntoda la República en Materia de Fuero Federal y de la Ley de la Propiedad Industrial vigentes en el\nmomento en que se haya cometido.\n\n    TERCERO.- Las referencias que otras disposiciones hagan al artículo 194 del Código Federal de\nProcedimientos Penales respecto de la detención de personas en casos urgentes, se entenderán hechas\nal artículo 193 bis del mismo ordenamiento."
+        },
+        {
+          "id": "S6",
+          "filename": "CPF.pdf",
+          "score": 0.5082156021983626,
+          "text": "primer y último párrafos; 35, cuarto párrafo; 38; 40; 50 Bis, primer\npárrafo; 55, primero y tercer párrafos; 56; 64; 65, segundo párrafo; 71, segundo párrafo; 74, primer\npárrafo; 75; 76; 77; 87; la denominación del Título Quinto, Capítulo I del Libro Primero; 91; 93, cuarto\npárrafo; 97, primer párrafo; 99; 101, segundo y tercer párrafos; 110, primer y tercer párrafos; 114; 115,\nprimer párrafo; la denominación del Capítulo VIII del Título Quinto del Libro Primero; 225, fracciones IX,\nX, XII, XIV, XVI, XVII, XIX, XXI, XXVII, XXVIII, XXX, XXXI y XXXII; se adicionan los artículos 11 Bis; un\nsegundo párrafo al artículo 55, recorriéndose en su orden los subsecuentes; un cuarto párrafo al artículo\n211 Bis 2; se derogan el quinto párrafo del artículo 35; el cuarto y sexto párrafos del artículo 55; el\nartículo 90 Bis y las fracciones XI y XIII del artículo 225, del Código Penal Federal, para quedar como\nsigue:\n\n   ………\n\n                                                               Transitorios\n\n    Primero.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de\nla Federación salvo lo previsto en el siguiente artículo.\n\n    Segundo.- Las reformas al Código Nacional de Procedimientos Penales, al Código Penal Federal, a la\nLey General para Prevenir y Sancionar los Delitos en Materia de Secuestro, Reglamentaria de la fracción\nXXI del artículo 73 de la Constitución Política de los Estados Unidos Mexicanos, los artículos 2, 13, 44 y\n49 de la Ley Federal para la Protección a Personas que Intervienen en el Procedimiento Penal y los\nartículos 21 en su fracción X, 50 Bis y 158 de la Ley Orgánica del Poder Judicial de la Federación,\nentrarán en vigor en términos de lo previsto por el Artículo Segundo Transitorio del Decreto por el que se\nexpide el Código Nacional de Procedimientos Penales publicado en el Diario Oficial de la Federación el 5\nde marzo de 2014.\n\n   Los procedimientos que se encuentren en trámite, relacionados con las modificaciones a los preceptos\nlegales contemplados en el presente Decreto, se resolverán de conformidad con las disposiciones que les\ndieron origen.\n\n   Tercero.- Dentro de los 180 días naturales a la entrada en vigor del presente Decreto, la Federación y\nlas entidades federativas en el ámbito de sus respectivas competencias, deberán contar con una\nAutoridad de Supervisión de Medidas Cautelares y de la Suspensión Condicional del Proceso."
+        },
+        {
+          "id": "S7",
+          "filename": "CPF.pdf",
+          "score": 0.4936904380394947,
+          "text": "Publicado en el Diario Oficial de la Federación el 10 de enero de 1994\n\n    ARTICULO PRIMERO.- Del Código Penal para el Distrito Federal en Materia de Fuero Común y para\ntoda la República en Materia de Fuero Federal, se reforman los artículos: 8, 9, 12 párrafos primero y\nsegundo, 13 primer párrafo y fracciones V, VI y VIII, 15, 16, 17, 29 párrafo segundo, 30 fracciones II y III,\n32 fracción VI, 34 párrafo primero, 35 párrafo cuarto, 37, 52, 60 primero y segundo párrafo y la fracción II,\n61, 62, 64 segundo párrafo, 64 bis, 65, 66, 71 párrafo primero, 85 párrafo primero, 86 fracción II, 90 inciso\nb) de la fracción I, y fracciones VII y VIII, 93 párrafo primero, 107 párrafo segundo, 111, 115, 153, 158\nprimer párrafo, 164 segundo párrafo, 170, 172 bis, 173 primer párrafo, 178, 187, 193, 194, 195, 196, 197,\n198, 199, 201 párrafos primero y segundo, 209, 210, 225 fracciones IX, X, XII, XVII y XX, 228 fracción I,\n231 párrafo primero, 340, 341, 247 párrafo primero y fracciones II y IV en su primer párrafo, 249 primer\npárrafo, 250 primer párrafo y fracciones II y IV, 284, 303, 310, 323, 368 fracción I, 388 y 390. Del mismo\nCódigo se adicionan: Un párrafo segundo al artículo 7, dos últimos párrafos al artículo 13, un párrafo\ncuarto al artículo 27, recorriéndose en su orden los actuales párrafos cuarto, quinto y sexto, pasando a\nser los párrafos quinto, sexto y séptimo, un artículo 31 bis, un segundo párrafo al artículo 34,\nrecorriéndose en su orden los actuales párrafos segundo y tercero pasando a ser tercero y cuarto, al\nartículo 35 un último párrafo, un artículo 69 bis, un segundo y quinto párrafos del artículo 93\nrecorriéndose los actuales párrafos segundo y tercero para ser los párrafos tercero y cuarto, un párrafo\ntercero y un párrafo cuarto del artículo 110, un artículo 195 bis, un artículo 196 bis, las fracciones III y IV\nal artículo 231, un artículo 248 bis, un segundo párrafo al artículo 286, un artículo 321 bis, un artículo 336\nbis, un artículo 388 bis; y un párrafo segundo del artículo 390 y el apéndice 1; se derogan: los artículos 59\nbis, la fracción VI del artículo 60, el último párrafo del artículo 70,"
+        },
+        {
+          "id": "S8",
+          "filename": "CPF.pdf",
+          "score": 0.49284579049931415,
+          "text": "México, D.F., a 30 de abril de 2009.- Dip. Cesar Horacio Duarte Jaquez, Presidente.- Sen. Gustavo\nEnrique Madero Muñoz, Presidente.- Dip. Maria Eugenia Jimenez Valenzuela, Secretaria.- Sen.\nGabino Cue Monteagudo, Secretario.- Rúbricas.\"\n\n   En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los\nEstados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la\nResidencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a veintiséis de mayo de\n\n\n\n                                                               256 de 353\n                                                                           CÓDIGO PENAL FEDERAL\n            CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                Última Reforma DOF 13-03-2026\n            Secretaría General\n            Secretaría de Servicios Parlamentarios\n\n\n\n\ndos mil nueve.- Felipe de Jesús Calderón Hinojosa.- Rúbrica.- El Secretario de Gobernación, Lic.\nFernando Francisco Gómez Mont Urueta.- Rúbrica.\n\n\n\n\n                                                              257 de 353\n                                                                                                            CÓDIGO PENAL FEDERAL\n              CÁMARA DE DIPUTADOS DEL H. CONGRESO DE LA UNIÓN                                               Última Reforma DOF 13-03-2026\n              Secretaría General\n              Secretaría de Servicios Parlamentarios\n\n\n\n\nDECRETO por el que se adicionan diversas disposiciones al Código Penal Federal.\n                                   Publicado en el Diario Oficial de la Federación el 24 de junio de 2009\n\n    Artículo Único. Se adicionan un párrafo tercero al artículo 211 bis 2; un párrafo tercero al artículo 211\nbis 3; un párrafo último al artículo 223; y los artículos 250 bis y 250 bis 1, todos del Código Penal Federal;\npara quedar como sigue:\n\n   ……….\n\n                                                                TRANSITORIO\n\n    Único.- El presente Decreto entrará en vigor al día siguiente de su publicación en el Diario Oficial de\nla Federación.\n\n  México, D.F., a 11 de diciembre de 2008.- Dip. Cesar Horacio Duarte Jaquez, Presidente.- Sen.\nGustavo Enrique Madero Muñoz, Presidente.- Dip. Manuel Portilla Dieguez, Secretario.- Sen. Gabino\nCué Monteagudo, Secretario.- Rúbricas.\"\n\n   En cumplimiento de lo dispuesto por la fracción I del Artículo 89 de la Constitución Política de los\nEstados Unidos Mexicanos, y para su debida publicación y observancia, expido el presente Decreto en la\nResidencia del Poder Ejecutivo Federal, en la Ciudad de México, Distrito Federal, a veintisiete de marzo\nde dos mil nueve.- Felipe de Jesús Calderón Hinojosa.- Rúbrica.- El Secretario de Gobernación, Lic.\nFernando Francisco Gómez Mont Urueta.- Rúbrica."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "description": "Pruebas dirigidas a confusiones conocidas de artículos. El resultado automático es heurístico; revisar manualmente cada borrador y sus fragmentos.",
+  "maxResultsPerCase": 15,
+  "maxEvidenceChunks": 8,
+  "cases": [
+    {
+      "id": "LFPDPPP-SEC-18",
+      "file": "LFPDPPP.pdf",
+      "question": "Conforme exclusivamente a la LFPDPPP del Vector Store, ¿qué artículo obliga al responsable a establecer medidas administrativas, técnicas y físicas para proteger datos personales? Identifica el número exacto y resume qué riesgos cubre.",
+      "searchQuery": "LFPDPPP artículo 18 medidas de seguridad administrativas técnicas físicas proteger datos personales daño pérdida alteración destrucción acceso tratamiento no autorizado",
+      "checklist": "Debe identificar el artículo 18 y sus medidas administrativas, técnicas y físicas; no confundirlo con cancelación, oposición o plazos ARCO.",
+      "expectedArticleReferences": ["18"],
+      "allowedAdditionalArticleReferences": [],
+      "mustIncludeGroups": [
+        ["administrativas"],
+        ["técnicas", "tecnicas"],
+        ["físicas", "fisicas"]
+      ],
+      "mustNotMatch": [
+        "\\bart[ií]culo\\s+25\\b.{0,100}\\bmedidas de seguridad",
+        "\\bart[ií]culo\\s+31\\b.{0,100}\\bvulneraciones de seguridad"
+      ]
+    },
+    {
+      "id": "LFPDPPP-BREACH-19",
+      "file": "LFPDPPP.pdf",
+      "question": "Según la LFPDPPP del Vector Store, ¿qué artículo regula informar a las personas titulares de una vulneración de seguridad que afecte significativamente sus derechos patrimoniales o morales, y en qué plazo? Da el número exacto y no confundas este deber con los plazos de solicitudes ARCO.",
+      "searchQuery": "LFPDPPP artículo 19 vulneraciones seguridad afecten significativamente derechos patrimoniales morales informadas forma inmediata responsable; diferenciar artículo 31 ARCO",
+      "checklist": "Debe señalar artículo 19 y comunicación inmediata cuando se afecten significativamente derechos patrimoniales o morales; no atribuirlo al artículo 31.",
+      "expectedArticleReferences": ["19"],
+      "allowedAdditionalArticleReferences": [],
+      "mustIncludeGroups": [
+        ["vulneración", "vulneracion"],
+        ["inmediata", "inmediatamente"],
+        ["patrimoniales", "morales"]
+      ],
+      "mustNotMatch": [
+        "\\bart[ií]culo\\s+31\\b.{0,120}\\bnotific",
+        "\\bart[ií]culo\\s+25\\b.{0,120}\\bvulneración de seguridad"
+      ]
+    },
+    {
+      "id": "LFPDPPP-CANCEL-25",
+      "file": "LFPDPPP.pdf",
+      "question": "¿Qué regula el artículo 25 de la LFPDPPP según el documento? Explica si trata de medidas de seguridad o de supuestos en los que el responsable no está obligado a cancelar datos personales. Cita el artículo exacto.",
+      "searchQuery": "LFPDPPP artículo 25 responsable no estará obligado a cancelar datos personales excepciones contrato disposición legal interés público",
+      "checklist": "Debe describir excepciones al deber de cancelación; no atribuir al artículo 25 las medidas de seguridad del artículo 18.",
+      "expectedArticleReferences": ["25"],
+      "allowedAdditionalArticleReferences": [],
+      "mustIncludeGroups": [["cancel", "cancelación", "cancelacion"]],
+      "mustNotMatch": [
+        "\\bart[ií]culo\\s+25\\b.{0,180}\\bmedidas administrativas,? técnicas y físicas"
+      ]
+    },
+    {
+      "id": "LFPDPPP-OPPOSITION-26",
+      "file": "LFPDPPP.pdf",
+      "question": "¿Qué derecho regula el artículo 26 de la LFPDPPP y en qué supuestos puede la persona titular oponerse al tratamiento o pedir que cese? Identifica correctamente el artículo; no lo describas como una regla de seguridad de datos.",
+      "searchQuery": "LFPDPPP artículo 26 derecho titular oponerse tratamiento exigir cese causa legítima tratamiento automatizado efectos jurídicos",
+      "checklist": "Debe identificar el derecho de oposición y sus supuestos; no confundirlo con medidas de seguridad ni vulneraciones.",
+      "expectedArticleReferences": ["26"],
+      "allowedAdditionalArticleReferences": [],
+      "mustIncludeGroups": [
+        ["oposición", "oposicion", "oponerse"],
+        ["tratamiento"]
+      ],
+      "mustNotMatch": [
+        "\\bart[ií]culo\\s+26\\b.{0,160}\\b(notificar|informar inmediatamente)\\b"
+      ]
+    },
+    {
+      "id": "LFPDPPP-ARCO-31",
+      "file": "LFPDPPP.pdf",
+      "question": "¿Qué plazos establece el artículo 31 de la LFPDPPP para comunicar la determinación de una solicitud ARCO y hacerla efectiva cuando proceda? Responde con los números exactos y el objeto de cada plazo.",
+      "searchQuery": "LFPDPPP artículo 31 veinte días quince días solicitud derechos ARCO determinación hacer efectiva respuesta",
+      "checklist": "Debe indicar 20 días para comunicar la determinación y 15 días siguientes para hacerla efectiva; no presentarlos como plazos para avisar vulneraciones.",
+      "expectedArticleReferences": ["31"],
+      "allowedAdditionalArticleReferences": [],
+      "mustIncludeGroups": [
+        ["20 días", "veinte días"],
+        ["15 días", "quince días"],
+        ["arco"]
+      ],
+      "mustNotMatch": [
+        "\\bart[ií]culo\\s+31\\b.{0,180}\\b(avisar|notificar) (?:la )?vulneración"
+      ]
+    },
+    {
+      "id": "CPF-UNAUTHORIZED-211BIS2",
+      "file": "CPF.pdf",
+      "question": "Conforme exclusivamente al Código Penal Federal del Vector Store, una persona sin autorización copia información de un sistema informático del Estado protegido por un mecanismo de seguridad. ¿Qué artículo contempla ese supuesto? Da el número completo y, si comparas el supuesto autorizado, cítalo por separado.",
+      "searchQuery": "Código Penal Federal artículo 211 bis 2 sin autorización copia información sistemas equipos informática Estado protegidos; artículo 211 bis 3 autorizado",
+      "checklist": "Debe identificar artículo 211 bis 2 para conocer o copiar sin autorización información de sistemas del Estado protegidos; no atribuirlo al 211 bis 3.",
+      "expectedArticleReferences": ["211 bis 2"],
+      "allowedAdditionalArticleReferences": ["211 bis 3"],
+      "mustIncludeGroups": [
+        ["sin autorización", "sin autorizacion"],
+        ["copia", "copie"]
+      ],
+      "mustNotMatch": ["\\b211\\s+bis\\s+3\\b.{0,120}\\bsin autorización"]
+    },
+    {
+      "id": "CPF-AUTHORIZED-211BIS3",
+      "file": "CPF.pdf",
+      "question": "Conforme exclusivamente al Código Penal Federal del Vector Store, un usuario que sí está autorizado para acceder a sistemas informáticos del Estado copia indebidamente información. ¿Qué artículo contempla ese supuesto? Da el número completo y explica brevemente por qué la autorización importa, comparándolo solo con el artículo del supuesto sin autorización si el fragmento lo respalda.",
+      "searchQuery": "Código Penal Federal artículo 211 bis 3 estando autorizado acceder indebidamente copia información sistemas equipos informática Estado; diferenciar sin autorización artículo 211 bis 2",
+      "checklist": "Debe identificar artículo 211 bis 3 para conducta indebida con acceso autorizado y distinguirlo del supuesto sin autorización del 211 bis 2.",
+      "expectedArticleReferences": ["211 bis 3"],
+      "allowedAdditionalArticleReferences": ["211 bis 2"],
+      "mustIncludeGroups": [
+        ["autorizado", "autorizada"],
+        ["indebidamente", "indebida"],
+        ["211 bis 3"]
+      ],
+      "mustNotMatch": [
+        "\\bartículo\\s+211\\s+bis\\s+2\\b.{0,120}\\bestando autorizado"
+      ]
+    },
+    {
+      "id": "CPF-AUTHORIZATION-AMBIGUOUS",
+      "file": "CPF.pdf",
+      "question": "Una persona copia indebidamente información de un sistema informático del Estado protegido por un mecanismo de seguridad, pero no sabemos si estaba autorizada para acceder. ¿Puedes seleccionar un artículo del CPF con esos datos? Explica qué hecho falta y distingue los artículos aplicables a los dos supuestos.",
+      "searchQuery": "Código Penal Federal 211 bis 2 sin autorización copiar información Estado; 211 bis 3 estando autorizado acceso copia indebidamente",
+      "checklist": "Debe abstenerse de elegir un solo artículo sin conocer si existía autorización; explicar condicionalmente 211 bis 2 y 211 bis 3 con la diferencia correcta.",
+      "expectedArticleReferences": ["211 bis 2", "211 bis 3"],
+      "allowedAdditionalArticleReferences": [],
+      "expectedStatus": "parcial",
+      "mustIncludeGroups": [
+        ["autorización", "autorizacion", "autorizado"],
+        [
+          "depende",
+          "si estaba",
+          "si tenía",
+          "si tenía autorización",
+          "falta saber"
+        ]
+      ],
+      "mustNotMatch": [
+        "\\bdefinitivamente corresponde al artículo 211\\s+bis\\s+[23]\\b"
+      ]
+    }
+  ]
+}
