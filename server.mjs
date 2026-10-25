@@ -49,21 +49,35 @@ app.post("/api/chat", async (req, res) => {
   try {
     // Read on each request so legal rules can be edited without restarting the server.
     const legalRules = await readFile(rulesPath, "utf8");
+    
     // Retrieve the exact chunks first so the generation step gets inspectable evidence.
     const search = await openai.vectorStores.search(vectorStoreId, {
       query: question,
       max_num_results: 12,
       rewrite_query: true,
     });
+
     const sources = (search.data || [])
-      .map((result, index) => ({
-        id: `S${index + 1}`,
-        filename: result.filename || "Archivo sin nombre",
-        score: result.score,
-        text: (result.content || []).filter((part) => part.type === "text").map(
-          (part) => part.text,
-        ).join("\n").trim(),
-      }))
+      .map((result, index) => {
+        // En servidores en la nube (Render/Linux), la API de OpenAI puede devolver
+        // el nombre en 'filename', en 'attributes.filename' o solo el 'file_id'.
+        const filename = 
+          result.filename || 
+          result.attributes?.filename || 
+          result.file_id || 
+          `Documento_${index + 1}.pdf`;
+
+        return {
+          id: `S${index + 1}`,
+          filename: filename,
+          score: result.score,
+          text: (result.content || [])
+            .filter((part) => part.type === "text")
+            .map((part) => part.text)
+            .join("\n")
+            .trim(),
+        };
+      })
       .filter((source) => source.text);
 
     if (sources.length === 0) {
@@ -101,7 +115,16 @@ app.post("/api/chat", async (req, res) => {
     } catch {
       payload = null;
     }
+
     const validation = validateGroundedAnswer(payload, sources);
+
+    // Si la validación falla en producción, imprime los detalles exactos en el panel de logs de Render
+    if (!validation.valid) {
+      console.warn("⚠️ Falló la validación de citas en Render:");
+      console.warn("Errores:", JSON.stringify(validation.errors, null, 2));
+      console.warn("Fuentes disponibles:", JSON.stringify(sources.map(s => ({ id: s.id, filename: s.filename })), null, 2));
+    }
+
     const answer = validation.valid
       ? renderGroundedAnswer(payload)
       : "No puedo mostrar esta respuesta porque no pude comprobar que cada afirmación y referencia coincida con un extracto literal de la fuente. Prueba con una pregunta más específica o identifica el artículo que quieres consultar.";
@@ -109,9 +132,8 @@ app.post("/api/chat", async (req, res) => {
     res.json({
       answer,
       response_id: response.id,
-      sources: sources.filter((source) =>
-        validation.sourceIds.includes(source.id)
-      )
+      sources: sources
+        .filter((source) => validation.sourceIds.includes(source.id))
         .map((source) => `[${source.id}] ${source.filename}`),
       citation_check: validation.valid
         ? { passed: true }
