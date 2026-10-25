@@ -143,6 +143,17 @@ app.post("/api/chat", async (req, res) => {
         "No se pudo consultar el vector store. Revisa la configuración y vuelve a intentar.",
     });
   }
+
+  const validClaims = (payload?.claims || []).filter((_, index) => {
+  return !validation.errors.some(err => err.startsWith(`Afirmación ${index + 1}:`));
+});
+
+let answer;
+if (validClaims.length > 0) {
+  answer = renderGroundedAnswer({ ...payload, claims: validClaims });
+} else {
+  answer = "No puedo mostrar esta respuesta porque no pude comprobar que cada afirmación coincida con un extracto literal de la fuente.";
+}
 });
 
 app.listen(port, () => {
